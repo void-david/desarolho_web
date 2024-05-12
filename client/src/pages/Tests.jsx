@@ -1,8 +1,8 @@
 import styled from "styled-components";
-export function Productos() {
+export function Tests() {
   return (
     <Container>
-      <h1>Productos</h1>
+      <h1>Tests</h1>
     </Container>
   );
 }

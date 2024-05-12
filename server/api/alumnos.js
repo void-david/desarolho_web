@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db'); // adjust the path according to your project structure
 
-router.get('/get-alumnos', (req, res) => {
+router.get('/api/get-alumnos', (req, res) => {
   const sql = 'SELECT * FROM test_table';
 
   db.all(sql, [], (err, rows) => {
@@ -15,7 +15,7 @@ router.get('/get-alumnos', (req, res) => {
   });
 });
 
-router.post('/add-alumno', (req, res) => {
+router.post('/api/add-alumno', (req, res) => {
   const sql = 'INSERT INTO test_table (alumnos, grado) VALUES (?, ?)';
   const values = [req.body.alumnos, req.body.grado];
 
