@@ -15,6 +15,17 @@ router.get('/api/get-alumnos', (req, res) => {
   });
 });
 
+router.get('/api/get-questions', (req, res) => {
+  const sql = 'SELECT * FROM Questions';
+
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+    res.send(rows);
+  });
+});
+
 router.post('/api/add-alumno', (req, res) => {
   const sql = 'INSERT INTO test_table (alumnos, grado) VALUES (?, ?)';
   const values = [req.body.alumnos, req.body.grado];
