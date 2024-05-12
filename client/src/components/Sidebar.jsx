@@ -29,7 +29,7 @@ export function Sidebar({ sidebarOpen, setSidebarOpen }) {
         <div className="imgcontent">
           <img src={logo} />
         </div>
-        <h2>Re puto el leiva</h2>
+        <h2>Online test app</h2>
       </div>
       {linksArray.map(({ icon, label, to }) => (
         <div className="LinkContainer" key={label}>
@@ -91,9 +91,9 @@ const linksArray = [
     to: "/estadisticas",
   },
   {
-    label: "Productos",
+    label: "Tests",
     icon: <AiOutlineApartment />,
-    to: "/productos",
+    to: "/tests",
   },
   {
     label: "Diagramas",

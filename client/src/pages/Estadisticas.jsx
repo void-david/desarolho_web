@@ -6,7 +6,7 @@ export function Estadisticas() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/get-alumnos')
+    axios.get('http://localhost:3001/api/get-alumnos')
       .then(response => {
         setData(response.data);
       });
