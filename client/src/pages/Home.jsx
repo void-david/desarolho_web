@@ -1,24 +1,21 @@
 import styled from "styled-components";
+import React from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
-import React, { Fragment } from "react";
 
 export function Home() {
-
-const unityProvider =
-  useUnityContext({
-    loaderUrl: "build/myunityapp.loader.js",
-    dataUrl: "build/myunityapp.data",
-    frameworkUrl: "build/myunityapp.framework.js",
-    codeUrl: "build/myunityapp.wasm",
+  const { unityProvider } = useUnityContext({
+    loaderUrl: "/quizGame/build/desarolho_software.loader.js",
+    dataUrl: "/quizGame/build/desarolho_software.data",
+    frameworkUrl: "/quizGame/build/desarolho_software.framework.js",
+    codeUrl: "/quizGame/build/desarolho_software.wasm",
   });
 
-  return (<Container>
-    <Fragment>
-      <Unity unityProvider={unityProvider} style={{ height: 560, width: 1000 }} />
-
-    </Fragment>
-  </Container>);
+  return <Unity unityProvider={unityProvider} style =  {{ height: 560, width: 1000 }} />;
 }
 const Container =styled.div`
-  height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 `
+
