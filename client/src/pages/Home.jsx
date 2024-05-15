@@ -7,19 +7,23 @@ const CenteredContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh; // This will make the container take up the full viewport height
+  with: 100vw; // This will make the container take up the full viewport width
 `;
 
 export function Home() {
   const { unityProvider } = useUnityContext({
-    loaderUrl: "/quizGame/build/desarolho_software.loader.js",
-    dataUrl: "/quizGame/build/desarolho_software.data",
-    frameworkUrl: "/quizGame/build/desarolho_software.framework.js",
-    codeUrl: "/quizGame/build/desarolho_software.wasm",
+    loaderUrl: "/quizGame/build/UnityProjects.loader.js",
+    dataUrl: "/quizGame/build/UnityProjects.data",
+    frameworkUrl: "/quizGame/build/UnityProjects.framework.js",
+    codeUrl: "/quizGame/build/UnityProjects.wasm",
   });
 
   return (
     <CenteredContainer>
-      <Unity unityProvider={unityProvider} style={{ height: 900, width: 1600 }} />
+      <Unity
+        unityProvider={unityProvider}
+        style={{ height: 1100, width: 1600 }}
+      />
     </CenteredContainer>
   );
 }
