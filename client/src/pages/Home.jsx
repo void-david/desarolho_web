@@ -22,7 +22,7 @@ export function Home() {
     <CenteredContainer>
       <Unity
         unityProvider={unityProvider}
-        style={{ height: 1100, width: 1600 }}
+        style={{ height: 1100, width: 1950 }}
       />
     </CenteredContainer>
   );
