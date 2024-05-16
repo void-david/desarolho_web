@@ -12,17 +12,17 @@ const CenteredContainer = styled.div`
 
 export function Home() {
   const { unityProvider } = useUnityContext({
-    loaderUrl: "/quizGame/build/UnityProjects.loader.js",
-    dataUrl: "/quizGame/build/UnityProjects.data",
-    frameworkUrl: "/quizGame/build/UnityProjects.framework.js",
-    codeUrl: "/quizGame/build/UnityProjects.wasm",
+    loaderUrl: "/quizGame/build/LearningLimboV2.loader.js",
+    dataUrl: "/quizGame/build/LearningLimboV2.data",
+    frameworkUrl: "/quizGame/build/LearningLimboV2.framework.js",
+    codeUrl: "/quizGame/build/LearningLimboV2.wasm",
   });
 
   return (
     <CenteredContainer>
       <Unity
         unityProvider={unityProvider}
-        style={{ height: 1100, width: 1950 }}
+        style={{ height: 675, width: 1200 }}
       />
     </CenteredContainer>
   );
