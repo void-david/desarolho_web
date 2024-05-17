@@ -1,17 +1,21 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## How to setup the app
+```bash
+npm i
+npm install pocketbase
+```
+## How to run the development server
 
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Y en otra terminal 
+
+```bash
+./pocketbase serve
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

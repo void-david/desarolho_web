@@ -33,6 +33,10 @@ export default function Navbar() {
           <AiOutlineBarChart className={styles.icon} />          
           {!isMinimized && <h2 className={styles.smallText}>Estadísticas</h2>}
         </Link>
+        <Link href="/notes" className={styles.button}>
+          <AiOutlineBarChart className={styles.icon} />          
+          {!isMinimized && <h2 className={styles.smallText}>Notes</h2>}
+        </Link>
       </div>
 
       <div className={styles.buttonContainer}>
