@@ -1,0 +1,108 @@
+.container{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: var(--navbar-size);
+  height: 100dvh;
+  background-color: var(--primary-color);
+  transition: width 0.2s ease-out;
+  -webkit-box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+  
+}
+
+.minimizedContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 6rem;
+  height: 100dvh;
+  background-color: var(--primary-color);
+  transition: width 0.2s ease-in-out;
+  -webkit-box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.titleHeader{
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  align-items: center;
+  height: 6rem;
+}
+
+.bigText{
+  color: var(--secondary-color);
+  font-size: 2rem;
+}
+
+.smallText{
+  display: flex;
+  justify-content: start;
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  font-weight: 400;
+  width: 65%;
+}
+
+.bigIcon{
+  color: var(--tertiary-color);
+  font-size: 2.5rem;
+}
+
+.buttonContainer{
+  display: flex;
+  margin-top: 2rem;
+  background-color: var(--primary-color);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid var(--quaternary-color); 
+
+}
+
+.button{
+  display: flex;
+  margin-bottom: 1.4rem;
+  justify-content: space-around;
+  text-decoration: none;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  height: 1.4rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.minimizeButton{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  background-color: var(--quaternary-color);
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  top: 5rem;
+  right: -1rem;
+  -webkit-box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+
+.minimizeButton:hover{
+  background-color: var(--primary-color);
+}
+
+.icon{
+  display: flex;
+  justify-content: end;
+  color: var(--secondary-color);
+  font-size: 1.3rem; 
+  width: 35%;
+}
