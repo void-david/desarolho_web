@@ -4,11 +4,11 @@ import Navbar from "@/app/components/navbar";
 import styles from "@/styles/layout.module.css";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-const rubik = Rubik({ subsets: ["latin"],  weight: ['400', '500', '600', '700'], style: ['normal', 'italic']});
+const inter = Inter({ subsets: ["latin"], weight: ['400', '500', '600', '700'], style: ['normal'] });
+
 
 export const metadata: Metadata = {
-  title: "Quiz Game",
+  title: "Learning Limbo",
   description: "Made by Kaled Enriquez",
 };
 
@@ -19,11 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={rubik.className}>
+      <body className={inter.className}>
         <Navbar/>
-        <div className={styles.pageContainer}>
-          {children}
-        </div>
+        {children}
         
       </body>
     </html>
