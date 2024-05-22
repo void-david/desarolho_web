@@ -16,8 +16,9 @@ export default function Navbar() {
           <Link className={styles.bigText} href={"/"}>Learning Limbo</Link>
           <Link className={styles.smallText} href={"/"}>Home</Link>
           <Link className={styles.smallText} href={"/quizzes"}>Quizzes</Link>
-          <Link className={styles.smallText} href={"/"}>Resources</Link>
-          <Link className={styles.smallText} href={"/"}>Statistics</Link>
+          <Link className={styles.smallText} href={"/students"}>Students</Link>
+          <Link className={styles.smallText} href={"/createQuestion"}>Create Question</Link>
+          <Link className={styles.smallText} href={"/statistics"}>Statistics</Link>
         </div>
 
         <div>
