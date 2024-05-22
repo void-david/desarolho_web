@@ -3,6 +3,7 @@ import { Inter, Rubik } from "next/font/google";
 import Navbar from "@/app/components/navbar";
 import styles from "@/styles/layout.module.css";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"], weight: ['400', '500', '600', '700'], style: ['normal'] });
 
@@ -18,12 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar/>
-        {children}
-        
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <Navbar/>
+          {children}
+          
+        </body>
+      </html>
+    </ClerkProvider>
+    
   );
 }

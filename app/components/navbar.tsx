@@ -1,5 +1,11 @@
 import styles from '@/styles/navbar.module.css';
 import Link from 'next/link';
+import {
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 
 export default function Navbar() {
 
@@ -14,7 +20,14 @@ export default function Navbar() {
           <Link className={styles.smallText} href={"/"}>Statistics</Link>
         </div>
 
-        <div>sefwfafa</div>
+        <div>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+        </div>
       </div>
 
 
