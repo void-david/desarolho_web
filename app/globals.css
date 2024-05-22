@@ -3,7 +3,7 @@ body{
   height: 100vh;
   padding: 0;
   margin: 0;
-  background-color: var(--secondary-color);
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
  }
  
  :root{
@@ -12,5 +12,8 @@ body{
    --secondary-color: rgb(255, 255, 255);
    --tertiary-color: #9247FC;
    --quaternary-color: #21252b;
+
+   --gradient-start: #032c88;
+   --gradient-end: #2eda8e;
  }
  
