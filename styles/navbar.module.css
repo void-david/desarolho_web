@@ -28,7 +28,6 @@
 
 .smallText{
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   font-size: 0.8rem;
   color: black;
@@ -38,7 +37,7 @@
 
 .navlinks{
   display: flex;
-  width: 50%;
+  width: 65%;
   justify-content: space-between;
 }
 
@@ -49,16 +48,91 @@
   justify-content: center;
   width: 5rem;
   height: 2.3rem;
-  border-radius: 30px;
+  border-radius: 40px;
   background-color: #7700aee2;
+  border-color: #7700aee2;
   color: var(--secondary-color);
   font-size: 0.8rem;
   font-weight: 600;
-  border-width: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.accountButton:hover{
+  background-color: var(--secondary-color);
+  color: #7700aee2;
+}
+
+.menu{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 8rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menuIcon{
+  cursor: pointer;
+}
+
+.closeIcon{
+  cursor: pointer;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.mobileNav{
+  position: fixed;
+  top: 0;
+  right: -15rem;
+  width: 15rem;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  transition: right 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  z-index: 100;}
+
+.active{
+  right: 0;
+}
+
+.navlink{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3rem;
+  color: rgb(0, 0, 0);
+  font-size: 0.9rem;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
 
 @media (max-width: 1200px) {
+  .navlinks{
+    display: none;
+  }
+
+  .menuIcon{
+    display: flex;
+  }
+  .accountButton{
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menuIcon{
+    display: none;
+  }
   
 }
+
