@@ -5,12 +5,13 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 const port = 3001;
-
+const { sql, loadDatabase } = require('./database/quizgame.js');
 const cors = require('cors');
 const apipi = require('./api/apipi');
 
 // Import the db module
 const db = require('./db');
+loadDatabase();
 
 app.use(cors());
 app.use(morgan('dev'));
