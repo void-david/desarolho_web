@@ -2,6 +2,7 @@
 
 import styles from '@/styles/navbar.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AiOutlineMenu, AiOutlineCloseCircle  } from "react-icons/ai";
 import { useState } from 'react';
 
@@ -22,7 +23,16 @@ export default function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.stack}>
-        <Link className={styles.bigText} href="/">Learning Limbo</Link>
+
+        <Link className={styles.headerLogo} href="/">
+        <Image
+        src="/logo.png"
+        width={50}
+        height={50}
+        alt="Picture of the author"
+      />
+          Learning Limbo
+        </Link>
         <div className={styles.navlinks}>
           <Link className={styles.navlink} href="/">Home</Link>
           <Link className={styles.navlink} href="/quizzes">Quizzes</Link>
@@ -32,6 +42,8 @@ export default function Navbar() {
         </div>
 
         <div className={styles.menu}>
+        <AiOutlineMenu className={styles.menuIcon} onClick={handleClick} /> 
+
           <SignedOut>
             <SignInButton>
               <button className={styles.accountButton}>Sign in</button>
@@ -41,7 +53,7 @@ export default function Navbar() {
             <UserButton />
           </SignedIn>
 
-          <AiOutlineMenu className={styles.menuIcon} onClick={handleClick} /> 
+
 
           <div className={`${styles.mobileNav} ${isOpen ? styles.active : ''}`}> 
           <div style={{display: 'flex', justifyContent: 'flex-end', width: '100%'}}>

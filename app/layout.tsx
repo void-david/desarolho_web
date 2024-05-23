@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Rubik } from "next/font/google";
+import { usePathname } from 'next/navigation'
 import Navbar from "@/app/components/navbar";
 import styles from "@/styles/layout.module.css";
 import "./globals.css";
@@ -22,6 +23,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
+          
           <Navbar/>
           {children}
           

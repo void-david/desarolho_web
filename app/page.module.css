@@ -1,1 +1,11 @@
+.leftPageContainer{
+    width: 60%;
+    background-color: var(--quaternary-color);
+    height: calc(100vh - var(--navbar-height));
+}
 
+.rightPageContainer{
+    width: 40%;
+    background-color: var(--primary-color);
+    height: calc(100vh - var(--navbar-height));
+}

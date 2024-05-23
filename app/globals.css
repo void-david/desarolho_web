@@ -11,8 +11,10 @@ body{
    --primary-color: #0f0f0f;
    --secondary-color: rgb(255, 255, 255);
    --tertiary-color: #9247FC;
-   --quaternary-color: #21252b;
+   --quaternary-color: #0f7749;
 
+
+   --navbar-height: 4rem;
    --gradient-start: #2c5fd4;
    --gradient-end: #2eda8e;
  }
