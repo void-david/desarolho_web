@@ -12,8 +12,8 @@ export default function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.stack}>
+        <Link className={styles.bigText} href={"/"}>Learning Limbo</Link>
         <div className={styles.navlinks}>
-          <Link className={styles.bigText} href={"/"}>Learning Limbo</Link>
           <Link className={styles.smallText} href={"/"}>Home</Link>
           <Link className={styles.smallText} href={"/quizzes"}>Quizzes</Link>
           <Link className={styles.smallText} href={"/students"}>Students</Link>
@@ -22,8 +22,10 @@ export default function Navbar() {
         </div>
 
         <div>
-            <SignedOut>
-              <SignInButton />
+            <SignedOut >
+              <SignInButton>
+                <button className={styles.accountButton}>Sign in</button>
+              </SignInButton>
             </SignedOut>
             <SignedIn>
               <UserButton />
