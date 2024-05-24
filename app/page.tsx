@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   SignInButton,
+  SignOutButton,
   SignedIn,
   SignedOut,
   UserButton,
@@ -40,9 +41,15 @@ export default function Home() {
             </SignedOut>
 
             <SignedIn>
-              <Link style={{textDecoration: 'none'}} href={"/quizzes"}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <Link style={{ textDecoration: 'none', marginBottom: '10px' }} href={"/quizzes"}>
                 <button className={styles.button}>Go to quizzes</button>
               </Link>
+              <SignOutButton>
+                <button className={styles.button}>Log out</button>
+              </SignOutButton>
+            </div>
+    
             </SignedIn>
 
           </div>
