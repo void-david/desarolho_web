@@ -1,11 +1,102 @@
-.leftPageContainer{
-    width: 60%;
+.mainPage{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
     background-color: var(--quaternary-color);
-    height: calc(100vh - var(--navbar-height));
+    min-height: 100vh;
 }
 
+.headerContainer{
+    margin-left: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.leftPageContainer{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 60%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 100%;
+    background-color: var(--quaternary-color);
+}
+
+.leftMainContainer{
+    display: grid;
+    width: 100%;
+    color: var(--secondary-color);
+    background-color: var(--quaternary-color);
+
+}
+
+
 .rightPageContainer{
-    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 40%;
+    justify-content: center;
+    align-items: center;
     background-color: var(--primary-color);
-    height: calc(100vh - var(--navbar-height));
+    min-height: 100%;
+}
+
+.rightMainContainer{
+    display: grid;
+    width: 100%;
+    text-align: center;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button:hover{
+    background-color: var(--secondary-color);
+    color: var(--quinary-color);
+  }
+  
+
+.button{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 9rem;
+    height: 2.3rem;
+    border-radius: 0.8rem;
+    background-color: var(--quinary-color);
+    border-color: var(--quinary-color);
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.limboContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media query for screens 914px or less */
+@media only screen and (max-width: 914px) {
+    .rightPageContainer {
+        width: 100%; /* Change width to 100% */
+    }
+    .mainPage{
+        font-size: 0.8rem;
+    }
 }

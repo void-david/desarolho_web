@@ -3,6 +3,7 @@
 import styles from '@/styles/navbar.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation'
 import { AiOutlineMenu, AiOutlineCloseCircle  } from "react-icons/ai";
 import { useState } from 'react';
 
@@ -14,11 +15,16 @@ import {
 } from '@clerk/nextjs';
 
 export default function Navbar() {
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen); 
   };
+
+  if (pathname == "/") {
+    return null;
+  }
 
   return (
     <div className={styles.navbar}>
@@ -29,7 +35,7 @@ export default function Navbar() {
         src="/logo.png"
         width={50}
         height={50}
-        alt="Picture of the author"
+        alt="logo"
       />
           Learning Limbo
         </Link>
