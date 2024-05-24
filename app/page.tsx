@@ -37,9 +37,6 @@ export default function Home() {
               <SignInButton>
                 <button className={styles.button}>Log in</button>
               </SignInButton>
-              <SignInButton>
-                <button className={styles.button}>Sign up</button>
-              </SignInButton>
             </SignedOut>
 
             <SignedIn>
