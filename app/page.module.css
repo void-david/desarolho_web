@@ -91,10 +91,10 @@
     align-items: center;
 }
 
-/* Media query for screens 914px or less */
+/* Media query for responsivity */
 @media only screen and (max-width: 914px) {
     .rightPageContainer {
-        width: 100%; /* Change width to 100% */
+        width: 100%; 
     }
     .mainPage{
         font-size: 0.8rem;
