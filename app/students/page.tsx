@@ -28,10 +28,11 @@ function students() {
         <div className={styles.tableCell}>25 May 2025</div>
         <div className={styles.tableCell}>96</div>
         <div className={styles.tableCell}>
-
-        <AiFillStar />
+          <div>
+          <AiFillStar />
           4.5
           </div>
+        </div>
       </div>
 
 
@@ -47,10 +48,12 @@ function students() {
         <div className={styles.tableCell}>25 May 2025</div>
         <div className={styles.tableCell}>96</div>
         <div className={styles.tableCell}>
-
-        <AiFillStar />
+          <div>
+          <AiFillStar />
           4.5
           </div>
+
+        </div>
       </div>
 
     </div>
