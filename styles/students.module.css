@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    color: var(--primary-color);
+}
+
+.tableRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: var(--senary-color);
+    font-weight: 400;
+    font-size: 0.8rem;
+    border-bottom: 1px solid rgb(240, 240, 240); 
+    height: 100%;
+    padding: 1rem;
+    word-wrap: break-word; /* Añadir esta línea */
+}
+.tableCell {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+    max-width: 20%;
+    flex-wrap: wrap;
+    height: 100%;
+    word-break: break-all; /* Añadir esta línea para romper palabras largas */
+    hyphens: auto;
+
+}
+
+.name{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.email{
+    color: var(--senary-color);
+    font-weight: 400;
+    font-size: 0.8rem;
+
+}
+
+
+/* Pantallas medianas */
+@media (max-width: 1200px) {
+    .name {
+        font-size: 0.85rem;
+    }
+
+    .email {
+        font-size: 0.75rem;
+    }
+
+    .tableRow {
+        font-size: 0.75rem;
+    }
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 992px) {
+    .name {
+        font-size: 0.8rem;
+    }
+
+    .email {
+        font-size: 0.7rem;
+    }
+
+    .tableRow {
+        font-size: 0.7rem;
+    }
+}
+
+/* Pantallas extra pequeñas */
+@media (max-width: 768px) {
+    .name {
+        font-size: 0.75rem;
+    }
+
+    .email {
+        font-size: 0.65rem;
+    }
+
+    .tableRow {
+        font-size: 0.65rem;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 576px) {
+    .name {
+        font-size: 0.7rem;
+    }
+
+    .email {
+        font-size: 0.6rem;
+    }
+
+    .tableRow {
+        font-size: 0.6rem;
+    }
+}

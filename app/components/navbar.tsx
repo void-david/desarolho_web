@@ -59,8 +59,6 @@ export default function Navbar() {
             <UserButton />
           </SignedIn>
 
-
-
           <div className={`${styles.mobileNav} ${isOpen ? styles.active : ''}`}> 
           <div style={{display: 'flex', justifyContent: 'flex-end', width: '100%'}}>
             <AiOutlineCloseCircle  className={styles.closeIcon} onClick={handleClick} /> 
