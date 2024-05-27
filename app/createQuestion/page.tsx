@@ -1,50 +1,52 @@
 'use client';
 import React, { useState } from 'react';
 
-function CreateQuestion() {
-  const [pregunta, setText1] = useState('');
-  const [R1, setText2] = useState('');
-  const [R2, setText3] = useState('');
-  const [R3, setText4] = useState('');
-  const [R4, setText5] = useState('');
-  const [RCorrecta, setText6] = useState('');
+const PostQuestionForm = () => {
+  const [description, setDescription] = useState('');
+  const [answer1, setAnswer1] = useState('');
+  const [answer2, setAnswer2] = useState('');
+  const [answer3, setAnswer3] = useState('');
+  const [answer4, setAnswer4] = useState('');
+  const [answerCorrect, setAnswerCorrect] = useState('');
+  const [materia, setMateria] = useState('');
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(pregunta, R1, R2, R3, R4, RCorrecta);
-  }
 
-  const handleReset = () => {
-    setText1('');
-    setText2('');
-    setText3('');
-    setText4('');
-    setText5('');
-    setText6(''); 
-  }
-  
-  const questionStyle = { width: '80%', height: '40px' };
-  const inputStyle = { width: '40%', height: '40px' };
-  const buttonStyle = { width: '80px', height: '30px' };
-  
+    const question = {
+      description,
+      answer_1: answer1,
+      answer_2: answer2,
+      answer_3: answer3,
+      answer_4: answer4,
+      answer_correct: answerCorrect,
+      materia,
+    };
+
+    const res = await fetch('http://localhost:3001/api/post-questions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(question),
+    });
+
+    const data = await res.json();
+    console.log(data);
+  };
+
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)' }}>
-      <input type="text" value={pregunta} onChange={(e) => setText1(e.target.value)} placeholder="Crea tu pregunta" style={questionStyle} />
-      <input type="text" value={R1} onChange={(e) => setText2(e.target.value)} placeholder="Respuesta 1" style={inputStyle} />
-      <input type="text" value={R2} onChange={(e) => setText3(e.target.value)} placeholder="Respuesta 2" style={inputStyle} />
-      <input type="text" value={R3} onChange={(e) => setText4(e.target.value)} placeholder="Respuesta 3" style={inputStyle} />
-      <input type="text" value={R4} onChange={(e) => setText5(e.target.value)} placeholder="Respuesta 4" style={inputStyle} />
-      <input type="text" value={RCorrecta} onChange={(e) => setText6(e.target.value)} placeholder="Respuesta correcta" style={inputStyle} />
-      <select onChange={(e) => setText5(e.target.value)} style={inputStyle}>
-        <option value="">Select...</option>
-        <option value="Option 1">Option 1</option>
-        <option value="Option 2">Option 2</option>
-        <option value="Option 3">Option 3</option>
-      </select>
-      <button type="submit" style={buttonStyle}>Submit</button>
-      <button type="button" onClick={handleReset} style={buttonStyle}>Reset</button>
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" />
+      <input type="text" value={answer1} onChange={(e) => setAnswer1(e.target.value)} placeholder="Answer 1" />
+      <input type="text" value={answer2} onChange={(e) => setAnswer2(e.target.value)} placeholder="Answer 2" />
+      <input type="text" value={answer3} onChange={(e) => setAnswer3(e.target.value)} placeholder="Answer 3" />
+      <input type="text" value={answer4} onChange={(e) => setAnswer4(e.target.value)} placeholder="Answer 4" />
+      <input type="text" value={answerCorrect} onChange={(e) => setAnswerCorrect(e.target.value)} placeholder="Correct Answer" />
+      <input type="text" value={materia} onChange={(e) => setMateria(e.target.value)} placeholder="Materia" />
+      <button type="submit">Submit</button>
     </form>
   );
 };
 
-export default CreateQuestion;
+export default PostQuestionForm;
