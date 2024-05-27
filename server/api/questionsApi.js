@@ -14,40 +14,15 @@ router.get('/api/get-questions', (req, res) => {
 });
 
 router.post('/api/post-questions', (req, res) => {
-  const { quest_ID, test_ID, description, answer_1, answer_2, answer_3, answer_4, answer_correct } = req.body;
+  const { description, answer_1, answer_2, answer_3, answer_4, answer_correct, materia } = req.body;
 
-  const sql = `INSERT INTO Questions (quest_ID, test_ID, description, answer_1, answer_2, answer_3, answer_4, answer_correct) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+  const sql = `INSERT INTO Questions (description, answer_1, answer_2, answer_3, answer_4, answer_correct, materia) VALUES (?, ?, ?, ?, ?, ?, ?)`;
 
-  db.run(sql, [quest_ID, test_ID, description, answer_1, answer_2, answer_3, answer_4, answer_correct], function(err) {
+  db.run(sql, [description, answer_1, answer_2, answer_3, answer_4, answer_correct, materia], function(err) {
     if (err) {
       return res.status(500).send(err.message);
     }
     res.send({ message: 'Question successfully added', lastID: this.lastID });
-  });
-});
-
-// Update question
-router.put('/api/update-questions/:id', (req, res) => {
-  const { quest_ID, test_ID, description, answer_1, answer_2, answer_3, answer_4, answer_correct } = req.body;
-  const sql = `UPDATE Questions SET quest_ID = ?, test_ID = ?, description = ?, answer_1 = ?, answer_2 = ?, answer_3 = ?, answer_4 = ?, answer_correct = ? WHERE quest_ID = ?`;
-
-  db.run(sql, [quest_ID, test_ID, description, answer_1, answer_2, answer_3, answer_4, answer_correct, req.params.id], function(err) {
-    if (err) {
-      return res.status(500).send(err.message);
-    }
-    res.send({ message: 'Question successfully updated' });
-  });
-});
-
-// Delete question
-router.delete('/api/delete-questions/:id', (req, res) => {
-  const sql = 'DELETE FROM Questions WHERE quest_ID = ?';
-
-  db.run(sql, req.params.id, function(err) {
-    if (err) {
-      return res.status(500).send(err.message);
-    }
-    res.send({ message: 'Question successfully deleted' });
   });
 });
 
