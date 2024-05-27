@@ -45,7 +45,8 @@ function statistics() {
     
     <>
     
-      <div className={styles.container}>
+    <div className={styles.mainContainer}>
+    <div className={styles.leftContainer}>
         <div className={styles.statsContainer}>
           <div className={styles.stats}>
             <h1>Statistics</h1>
@@ -207,6 +208,19 @@ function statistics() {
         </div>
 
       </div>
+
+      
+      <div className={styles.rightContainer}>
+              <div className={styles.statsContainer}>
+                <h1> Estadistica 1</h1>
+                <p> 123,457</p>
+              </div>
+              <div className={styles.statsContainer}>
+                <h1> Estadistica 2</h1>
+                <p> 123,457</p>
+              </div>
+        </div>
+    </div>
 
     </>
     
