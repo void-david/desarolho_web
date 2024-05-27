@@ -184,7 +184,7 @@ function statistics() {
         <div className={styles.statsContainer}>
           <div className={styles.stats}>
             <h1>Statistics</h1>
-            <Bar
+            <Bar style={{width: '100%'}}
               data={{
                 labels: ['January', 'February', 'March'],
                 datasets: [
