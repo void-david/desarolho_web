@@ -13,4 +13,15 @@ router.get('/api/get-materias', (req, res) => {
   });
 });
 
+router.delete('/api/delete-materias/:materia', (req, res) => {
+  const sql = 'DELETE FROM materias WHERE materia = ?';
+
+  db.run(sql, [req.params.materia], (err) => {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+    res.send({ message: 'Materia successfully deleted' });
+  });
+});
+
 module.exports = router;
