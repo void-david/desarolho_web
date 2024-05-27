@@ -8,7 +8,7 @@ const app = express();
 const port = 3001;
 
 const cors = require('cors');
-const apipi = require('./api/apipi');
+const questionsApi = require('./api/questionsApi');
 
 // Import the db module
 const db = require('./db');
@@ -16,7 +16,8 @@ const db = require('./db');
 app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(apipi);
+
+app.use(questionsApi);
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
