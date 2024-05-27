@@ -13,6 +13,18 @@ router.get('/api/get-questions', (req, res) => {
   });
 });
 
+router.get('/api/get-questions/:materia', (req, res) => {
+  const materia = req.params.materia;
+  const sql = 'SELECT * FROM Questions WHERE materia = ?';
+
+  db.all(sql, [materia], (err, rows) => {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+    res.send(rows);
+  });
+});
+
 router.post('/api/post-questions', (req, res) => {
   const { description, answer_1, answer_2, answer_3, answer_4, answer_correct, materia } = req.body;
 
