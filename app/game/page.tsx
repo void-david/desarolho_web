@@ -18,7 +18,8 @@ function game() {
         <div className={styles.container}>
             <Unity
             unityProvider={unityProvider}
-            style={{ height: 675, width: 1200 }}
+            // cambiar en el export de unity
+            style={{ height: 1000, width: 'auto' }}
         />   
         </div>
 

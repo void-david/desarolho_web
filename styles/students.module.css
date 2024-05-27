@@ -17,7 +17,7 @@
     border-bottom: 1px solid rgb(240, 240, 240); 
     height: 100%;
     padding: 1rem;
-    word-wrap: break-word; /* Añadir esta línea */
+    word-wrap: break-word;
 }
 .tableCell {
     display: flex;
@@ -27,7 +27,7 @@
     max-width: 20%;
     flex-wrap: wrap;
     height: 100%;
-    word-break: break-all; /* Añadir esta línea para romper palabras largas */
+    word-break: break-all; 
     hyphens: auto;
 
 }
