@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.1.0",
+    "chart.js": "^4.4.3",
     "next": "14.2.3",
     "pocketbase": "^0.21.2",
     "react": "^18",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.1",
