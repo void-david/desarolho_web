@@ -72,6 +72,41 @@
     text-align: center;
 }
 
+.valuesSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 1rem;
+}
+
+.box{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.box input{
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.submitButton{
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--quaternary-color);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 976px){
     .cardContainer{
         width: 100%;

@@ -36,13 +36,18 @@ const PostQuestionForm = () => {
     const data = await res.json();
     console.log(data);
   };
-
+{}
   return (
 
     <>
-      <div className={styles.mainContainer}>
-      <form onSubmit={handleSubmit}>
-      <div className={styles.cardContainer}>
+
+    <div className={styles.mainContainer}>
+
+
+    </div>
+
+    <form onSubmit={handleSubmit}>
+      <div className="form-group">
         <label htmlFor="description">Description</label>
         <input
           type="text"
@@ -116,7 +121,7 @@ const PostQuestionForm = () => {
         <button type="submit">Submit</button>
       </div>
     </form>
-      </div>
+
     </>
   );
 };
