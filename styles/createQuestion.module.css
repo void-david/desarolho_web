@@ -1,0 +1,28 @@
+.mainContainer{
+    display: flex;
+    justify-content: space-around;
+    padding: 5rem;
+
+}
+
+.formContainer{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.formContainer label{
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem;
+
+}
+
+.formContainer input{
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

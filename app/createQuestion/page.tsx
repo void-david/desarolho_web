@@ -1,4 +1,6 @@
 'use client';
+import { group } from 'console';
+import styles from '@/styles/createQuestion.module.css';
 import React, { useState } from 'react';
 
 const PostQuestionForm = () => {
@@ -36,16 +38,86 @@ const PostQuestionForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" />
-      <input type="text" value={answer1} onChange={(e) => setAnswer1(e.target.value)} placeholder="Answer 1" />
-      <input type="text" value={answer2} onChange={(e) => setAnswer2(e.target.value)} placeholder="Answer 2" />
-      <input type="text" value={answer3} onChange={(e) => setAnswer3(e.target.value)} placeholder="Answer 3" />
-      <input type="text" value={answer4} onChange={(e) => setAnswer4(e.target.value)} placeholder="Answer 4" />
-      <input type="text" value={answerCorrect} onChange={(e) => setAnswerCorrect(e.target.value)} placeholder="Correct Answer" />
-      <input type="text" value={materia} onChange={(e) => setMateria(e.target.value)} placeholder="Materia" />
-      <button type="submit">Submit</button>
+
+    <>
+      <div className={styles.mainContainer}>
+      <form onSubmit={handleSubmit}>
+      <div className={styles.cardContainer}>
+        <label htmlFor="description">Description</label>
+        <input
+          type="text"
+          id="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Description"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="answer1">Answer 1</label>
+        <input
+          type="text"
+          id="answer1"
+          value={answer1}
+          onChange={(e) => setAnswer1(e.target.value)}
+          placeholder="Answer 1"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="answer2">Answer 2</label>
+        <input
+          type="text"
+          id="answer2"
+          value={answer2}
+          onChange={(e) => setAnswer2(e.target.value)}
+          placeholder="Answer 2"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="answer3">Answer 3</label>
+        <input
+          type="text"
+          id="answer3"
+          value={answer3}
+          onChange={(e) => setAnswer3(e.target.value)}
+          placeholder="Answer 3"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="answer4">Answer 4</label>
+        <input
+          type="text"
+          id="answer4"
+          value={answer4}
+          onChange={(e) => setAnswer4(e.target.value)}
+          placeholder="Answer 4"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="answerCorrect">Correct Answer</label>
+        <input
+          type="text"
+          id="answerCorrect"
+          value={answerCorrect}
+          onChange={(e) => setAnswerCorrect(e.target.value)}
+          placeholder="Correct Answer"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="materia">Materia</label>
+        <input
+          type="text"
+          id="materia"
+          value={materia}
+          onChange={(e) => setMateria(e.target.value)}
+          placeholder="Materia"
+        />
+      </div>
+      <div className="form-group">
+        <button type="submit">Submit</button>
+      </div>
     </form>
+      </div>
+    </>
   );
 };
 
