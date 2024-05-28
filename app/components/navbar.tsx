@@ -43,7 +43,6 @@ export default function Navbar() {
           <Link className={styles.navlink} href="/">Home</Link>
           <Link className={styles.navlink} href="/quizzes">Quizzes</Link>
           <Link className={styles.navlink} href="/students">Students</Link>
-          <Link className={styles.navlink} href="/createQuestion">Create Question</Link>
           <Link className={styles.navlink} href="/statistics">Statistics</Link>
         </div>
 
@@ -71,7 +70,6 @@ export default function Navbar() {
             <Link className={styles.navlink} href="/">Home</Link>
             <Link className={styles.navlink} href="/quizzes">Quizzes</Link>
             <Link className={styles.navlink} href="/students">Students</Link>
-            <Link className={styles.navlink} href="/createQuestion">Create Question</Link>
             <Link className={styles.navlink} href="/statistics">Statistics</Link>
           </div>
           

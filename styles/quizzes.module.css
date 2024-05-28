@@ -107,8 +107,18 @@
     cursor: pointer;
 }
 
+.submitButton:hover{
+    background-color: var(--septary-color);
+}
+
 @media screen and (max-width: 976px){
+    .mainContainer{
+        flex-direction: column;
+    }
     .cardContainer{
+        width: 100%;
+    }
+    .leftContainer{
         width: 100%;
     }
     
