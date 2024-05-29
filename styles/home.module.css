@@ -1,0 +1,191 @@
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--quaternary-color);
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-color);
+    width: 95%;
+    margin: 2rem;
+    border-radius: 10px;
+
+}
+
+.header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--secondary-color);
+    width: 90%;
+    margin-top: 0.5rem;
+}
+
+.feedbackHeader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--secondary-color);
+    width: 90%;
+    margin-top: 0.5rem;
+}
+
+.subHeader{
+    display: flex;
+    font-size: 1rem;
+    color: #313131;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--secondary-color);
+    width: 90%;
+}
+
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin-top: 1rem;
+}
+
+.leftCardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.card{
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.roundCard{
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.bigCard{
+    width: 750px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedbackContent {
+    width: 85%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none;   
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 6.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 .354.854l-6 6a.5.5 0 0 1-.708 0l-6-6A.5.5 0 0 1 1.5 6.5zm0-4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 .354.854l-6 6a.5.5 0 0 1-.708 0l-6-6A.5.5 0 0 1 1.5 2.5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  
+  .feedbackContent option {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .feedbackContent:focus {
+    border-color: #66afe9;
+    background-color: #fff;
+  }
+  
+  .feedbackContent:hover {
+    border-color: #b3b3b3;
+  }
+  
+  .feedbackContent:disabled {
+    background-color: #e9e9e9;
+    color: #999;
+    cursor: not-allowed;
+  }
+
+.feedbackContent option[disabled][selected] {
+    color: #999; 
+  }
+
+.feedbackWritingSpace{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem;
+}
+
+.feedbackTextarea {
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    resize: none;
+  }
+
+
+  .submitButton{
+    width: 95%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--quaternary-color);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.submitButton:hover{
+    background-color: var(--septary-color);
+}
+
+.stats{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}

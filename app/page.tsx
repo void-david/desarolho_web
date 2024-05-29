@@ -10,7 +10,7 @@ import {
 } from '@clerk/nextjs';
 
 
-export default function Home() {
+export default function Login() {
   
   return (
     <>
@@ -42,8 +42,8 @@ export default function Home() {
 
             <SignedIn>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-              <Link style={{ textDecoration: 'none', marginBottom: '10px' }} href={"/quizzes"}>
-                <button className={styles.button}>Go to quizzes</button>
+              <Link style={{ textDecoration: 'none', marginBottom: '10px' }} href={"/home"}>
+                <button className={styles.button}>Go to Home</button>
               </Link>
               <SignOutButton>
                 <button className={styles.button}>Log out</button>
