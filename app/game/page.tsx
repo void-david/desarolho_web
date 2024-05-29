@@ -6,10 +6,10 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 
 function game() {
     const { unityProvider } = useUnityContext({
-        loaderUrl: "/quizGame/build/LearningLimboV2.loader.js",
-        dataUrl: "/quizGame/build/LearningLimboV2.data",
-        frameworkUrl: "/quizGame/build/LearningLimboV2.framework.js",
-        codeUrl: "/quizGame/build/LearningLimboV2.wasm",
+        loaderUrl: "/LearningLimboV3/build/LearningLimboV3.loader.js",
+        dataUrl: "/LearningLimboV3/build/LearningLimboV3.data",
+        frameworkUrl: "/LearningLimboV3/build/LearningLimboV3.framework.js",
+        codeUrl: "/LearningLimboV3/build/LearningLimboV3.wasm",
       });
     
 
@@ -19,7 +19,7 @@ function game() {
             <Unity
             unityProvider={unityProvider}
             // cambiar en el export de unity
-            style={{ height: 1000, width: 'auto' }}
+            style={{ height: 760, width: 'auto' }}
         />   
         </div>
 

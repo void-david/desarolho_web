@@ -4,7 +4,6 @@ import styles from '@/styles/quizzes.module.css'
 import Link from 'next/link'
 
 
-
  const quizzes = () =>{
   const [action, setAction] = useState('create');
   const [description, setDescription] = useState('');
@@ -55,14 +54,12 @@ import Link from 'next/link'
             <button className={styles.formsButton} onClick={() => setAction('delete')}>Delete</button>
           </div>
           <h2>{action.charAt(0).toUpperCase() + action.slice(1)} Question</h2>
-          <div className={styles.smallText}>Please complete the fields below with your question 
-          and possible answers.</div>
-
-
 
           <form className={styles.valuesSection} onSubmit={handleSubmit}>
               {action === 'create' && (
                 <>
+                  <div className={styles.smallText}>Please complete the fields below with your question 
+                  and possible answers.</div>
                   <div className={styles.box}>
                     <input
                       type="text"
@@ -130,17 +127,20 @@ import Link from 'next/link'
               )}
 
               {action === 'read' && (
+              <>
+                <div className={styles.smallText}>Please select the Quiz and Question you want to read. </div>
                 <div className={styles.box}>
-                  <select className={styles.feedbackContent} defaultValue="">
-                    <option value="" disabled>Pick a Quiz</option>
+                  <select className={styles.selector} defaultValue="">
+                    <option value="" disabled>Pick a Quiz
+                    </option>
                     <option value="quiz1">Quiz 1</option>
                     <option value="quiz2">Quiz 2</option>
                     <option value="quiz3">Quiz 3</option>
                   </select>
 
 
-                  <select className={styles.feedbackContent} defaultValue="">
-                    <option value="" disabled>Pick a Question to Read</option>
+                  <select className={styles.selector} defaultValue="">
+                    <option value="" disabled>Pick a Question</option>
                     
                         {/* Aqui los values deben de cambiar a lo de question creo? no se @david */}
                     <option value="quiz1">Question 1</option>
@@ -149,20 +149,21 @@ import Link from 'next/link'
                     <option value="quiz3">Question 4</option>
                   </select>
                 </div>
+                </>
               )}
 
               {action === 'update' && (
                 <>
                   <div className={styles.box}>
-                    <select className={styles.feedbackContent} defaultValue="">
-                      <option value="" disabled>Pick a Quiz to Update</option>
+                    <select className={styles.selector} defaultValue="">
+                      <option value="" disabled>Pick a Quiz</option>
                       <option value="quiz1">Quiz 1</option>
                       <option value="quiz2">Quiz 2</option>
                       <option value="quiz3">Quiz 3</option>
                     </select>
 
-                    <select className={styles.feedbackContent} defaultValue="">
-                    <option value="" disabled>Pick a Question to update</option>
+                  <select className={styles.selector} defaultValue="">
+                    <option value="" disabled>Pick a Question</option>
                     
                         {/* Aqui los values deben de cambiar a lo de question creo? no se @david */}
                     <option value="quiz1">Question 1</option>
@@ -239,7 +240,7 @@ import Link from 'next/link'
 
               {action === 'delete' && (
                 <div className={styles.box}>
-                  <select className={styles.feedbackContent} defaultValue="">
+                  <select className={styles.selector} defaultValue="">
                     <option value="" disabled>Pick a Quiz</option>
                     <option value="quiz1">Quiz 1</option>
                     <option value="quiz2">Quiz 2</option>
@@ -248,8 +249,8 @@ import Link from 'next/link'
 
 
                 
-                  <select className={styles.feedbackContent} defaultValue="">
-                    <option value="" disabled>Pick a Question to delete</option>
+                  <select className={styles.selector} defaultValue="">
+                    <option value="" disabled>Pick a Question</option>
 
                         {/* Aqui los values deben de cambiar a lo de question creo? no se @david */}
                     <option value="quiz1">Question 1</option>
