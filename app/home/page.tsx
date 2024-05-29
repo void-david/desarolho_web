@@ -1,4 +1,5 @@
 'use client';
+import { useUser } from "@clerk/nextjs";
 
 import React from 'react'
 import styles from '@/styles/home.module.css';
@@ -40,12 +41,14 @@ import {
   };
 
 export default function Home() {
+    const { isLoaded, isSignedIn, user } = useUser();
+
   return (
     <>
         <div className={styles.background}>
             <div className={styles.mainContainer}>
                 <div className={styles.header}>
-                    <h2>Welcome, Person!</h2>
+                    <h2>Welcome, {user?.firstName}!</h2>
                 </div>
 
                 <div className={styles.subHeader}>
