@@ -6,6 +6,7 @@ import Link from 'next/link'
 
 
  const quizzes = () =>{
+  const [action, setAction] = useState('create');
   const [description, setDescription] = useState('');
   const [answer1, setAnswer1] = useState('');
   const [answer2, setAnswer2] = useState('');
@@ -47,87 +48,224 @@ import Link from 'next/link'
 
     <div className={styles.leftContainer}>
         <div className={styles.formCard}>
-          <h2>Create Question</h2>
+          <div className={styles.buttonContainer}>
+            <button className={styles.formsButton} onClick={() => setAction('create')}>Create</button>
+            <button className={styles.formsButton} onClick={() => setAction('read')}>Read</button>
+            <button className={styles.formsButton} onClick={() => setAction('update')}>Update</button>
+            <button className={styles.formsButton} onClick={() => setAction('delete')}>Delete</button>
+          </div>
+          <h2>{action.charAt(0).toUpperCase() + action.slice(1)} Question</h2>
           <div className={styles.smallText}>Please complete the fields below with your question 
           and possible answers.</div>
 
 
+
           <form className={styles.valuesSection} onSubmit={handleSubmit}>
+              {action === 'create' && (
+                <>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="description"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      placeholder="Write here your question"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="answer1"
+                      value={answer1}
+                      onChange={(e) => setAnswer1(e.target.value)}
+                      placeholder="Answer 1"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="answer2"
+                      value={answer2}
+                      onChange={(e) => setAnswer2(e.target.value)}
+                      placeholder="Answer 2"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="answer3"
+                      value={answer3}
+                      onChange={(e) => setAnswer3(e.target.value)}
+                      placeholder="Answer 3"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="answer4"
+                      value={answer4}
+                      onChange={(e) => setAnswer4(e.target.value)}
+                      placeholder="Answer 4"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="answerCorrect"
+                      value={answerCorrect}
+                      onChange={(e) => setAnswerCorrect(e.target.value)}
+                      placeholder="Correct Answer"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="materia"
+                      value={materia}
+                      onChange={(e) => setMateria(e.target.value)}
+                      placeholder="Course"
+                    />
+                  </div>
+                </>
+              )}
 
-      <div className={styles.box}>
-        <input
-          type="text"
-          id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Write here your question"
-        />
-      </div>
+              {action === 'read' && (
+                <div className={styles.box}>
+                  <select className={styles.feedbackContent} defaultValue="">
+                    <option value="" disabled>Pick a Quiz</option>
+                    <option value="quiz1">Quiz 1</option>
+                    <option value="quiz2">Quiz 2</option>
+                    <option value="quiz3">Quiz 3</option>
+                  </select>
 
-      <div className={styles.box}>
-        <input
-          type="text"
-          id="answer1"
-          value={answer1}
-          onChange={(e) => setAnswer1(e.target.value)}
-          placeholder="Answer 1"
-        />
-      </div>
 
-      <div className={styles.box}>
-        <input
-          type="text"
-          id="answer2"
-          value={answer2}
-          onChange={(e) => setAnswer2(e.target.value)}
-          placeholder="Answer 2"
-        />
-      </div>
+                  <select className={styles.feedbackContent} defaultValue="">
+                    <option value="" disabled>Pick a Question to Read</option>
+                    
+                        {/* Aqui los values deben de cambiar a lo de question creo? no se @david */}
+                    <option value="quiz1">Question 1</option>
+                    <option value="quiz2">Question 2</option>
+                    <option value="quiz3">Question 3</option>
+                    <option value="quiz3">Question 4</option>
+                  </select>
+                </div>
+              )}
 
-      <div className={styles.box}>
-        <input
-          type="text"
-          id="answer3"
-          value={answer3}
-          onChange={(e) => setAnswer3(e.target.value)}
-          placeholder="Answer 3"
-        />
-      </div>
+              {action === 'update' && (
+                <>
+                  <div className={styles.box}>
+                    <select className={styles.feedbackContent} defaultValue="">
+                      <option value="" disabled>Pick a Quiz to Update</option>
+                      <option value="quiz1">Quiz 1</option>
+                      <option value="quiz2">Quiz 2</option>
+                      <option value="quiz3">Quiz 3</option>
+                    </select>
 
-      <div className={styles.box}>
-        <input
-          type="text"
-          id="answer4"
-          value={answer4}
-          onChange={(e) => setAnswer4(e.target.value)}
-          placeholder="Answer 4"
-        />
-      </div>
+                    <select className={styles.feedbackContent} defaultValue="">
+                    <option value="" disabled>Pick a Question to update</option>
+                    
+                        {/* Aqui los values deben de cambiar a lo de question creo? no se @david */}
+                    <option value="quiz1">Question 1</option>
+                    <option value="quiz2">Question 2</option>
+                    <option value="quiz3">Question 3</option>
+                    <option value="quiz3">Question 4</option>
+                  </select>
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="description"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      placeholder="Update your question"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="answer1"
+                      value={answer1}
+                      onChange={(e) => setAnswer1(e.target.value)}
+                      placeholder="Update Answer 1"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="answer2"
+                      value={answer2}
+                      onChange={(e) => setAnswer2(e.target.value)}
+                      placeholder="Update Answer 2"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="answer3"
+                      value={answer3}
+                      onChange={(e) => setAnswer3(e.target.value)}
+                      placeholder="Update Answer 3"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="answer4"
+                      value={answer4}
+                      onChange={(e) => setAnswer4(e.target.value)}
+                      placeholder="Update Answer 4"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="answerCorrect"
+                      value={answerCorrect}
+                      onChange={(e) => setAnswerCorrect(e.target.value)}
+                      placeholder="Update Correct Answer"
+                    />
+                  </div>
+                  <div className={styles.box}>
+                    <input
+                      type="text"
+                      id="materia"
+                      value={materia}
+                      onChange={(e) => setMateria(e.target.value)}
+                      placeholder="Update Course"
+                    />
+                  </div>
+                </>
+              )}
 
-      <div className={styles.box}>
-        <input
-          type="text"
-          id="answerCorrect"
-          value={answerCorrect}
-          onChange={(e) => setAnswerCorrect(e.target.value)}
-          placeholder="Correct Answer"
-        />
-      </div>
+              {action === 'delete' && (
+                <div className={styles.box}>
+                  <select className={styles.feedbackContent} defaultValue="">
+                    <option value="" disabled>Pick a Quiz</option>
+                    <option value="quiz1">Quiz 1</option>
+                    <option value="quiz2">Quiz 2</option>
+                    <option value="quiz3">Quiz 3</option>
+                  </select>
 
-      <div className={styles.box}>
-        <input
-          type="text"
-          id="materia"
-          value={materia}
-          onChange={(e) => setMateria(e.target.value)}
-          placeholder="Course"
-        />
-      </div>
 
-      <div className={styles.box}>
-        <button className={styles.submitButton} type="submit">Submit</button>
-      </div>
-    </form>
+                
+                  <select className={styles.feedbackContent} defaultValue="">
+                    <option value="" disabled>Pick a Question to delete</option>
+
+                        {/* Aqui los values deben de cambiar a lo de question creo? no se @david */}
+                    <option value="quiz1">Question 1</option>
+                    <option value="quiz2">Question 2</option>
+                    <option value="quiz3">Question 3</option>
+                    <option value="quiz3">Question 4</option>
+                  </select>
+
+                </div>
+              )}
+              <div className={styles.box}>
+                <button className={styles.submitButton} type="submit">
+                  Submit
+                </button>
+              </div>
+            </form>
 
 
 

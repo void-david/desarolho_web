@@ -5,8 +5,21 @@ import { AiFillStar } from "react-icons/ai";
 
 function students() {
   return (
+    <>
+    <div className={styles.header}> Students</div>
     <div className={styles.container}>
-      Member Details
+
+    {/* Este div tiene toda la información, es nomas contenedor */}
+    <div className={styles.person}>
+      {/* Este div tiene el avatar adentro, como tal no tiene width o height
+       porque lo va a agarrar de la base, para que crezca el div */}
+      <div className={styles.avatarContainer}>
+        {/* Este div luego se tiene que reemplazar por un componente image de next, debe ser la pura imagen */}
+         <div className={styles.avatar}></div>
+      </div>
+        
+    </div>
+
 
       <div className={styles.tableRow}>
         <div className={styles.tableCell}>Name</div>
@@ -57,6 +70,7 @@ function students() {
       </div>
 
     </div>
+    </>
   )
 }
 

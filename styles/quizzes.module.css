@@ -8,9 +8,29 @@
 
 .leftContainer {
     width: 35%;
+    margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--senary-color);
+    overflow: hidden;
+}
+
+.formsButton{
+    border: none;
+    width: 25%;
+    height: 2.5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .cardContainer {
@@ -55,7 +75,6 @@
 
 .formCard{
     width: 80%;
-    margin: 20px;
     border-radius: 10px;
     background-color: white;
     overflow: hidden;
