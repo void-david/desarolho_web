@@ -17,26 +17,28 @@ import Link from 'next/link'
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const question = {
-      description,
-      answer_1: answer1,
-      answer_2: answer2,
-      answer_3: answer3,
-      answer_4: answer4,
-      answer_correct: answerCorrect,
-      materia,
-    };
-
-    const res = await fetch('http://localhost:3001/api/post-questions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(question),
-    });
-
-    const data = await res.json();
-    console.log(data);
+    if(action == 'create'){
+      const question = {
+        description,
+        answer_1: answer1,
+        answer_2: answer2,
+        answer_3: answer3,
+        answer_4: answer4,
+        answer_correct: answerCorrect,
+        materia,
+      };
+  
+      const res = await fetch('http://localhost:3001/api/post-questions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(question),
+      });
+  
+      const data = await res.json();
+      console.log(data);
+    }
   };
 
 

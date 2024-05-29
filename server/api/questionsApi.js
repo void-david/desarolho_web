@@ -38,6 +38,20 @@ router.post('/api/post-questions', (req, res) => {
   });
 });
 
+router.post('/api/update-questions/:id', (req, res) => {
+  const { id } = req.params;
+  const { description, answer_1, answer_2, answer_3, answer_4, answer_correct, materia } = req.body;
+
+  const sql = `UPDATE Questions SET description = ?, answer_1 = ?, answer_2 = ?, answer_3 = ?, answer_4 = ?, answer_correct = ?, materia = ? WHERE id = ?`;
+
+  db.run(sql, [description, answer_1, answer_2, answer_3, answer_4, answer_correct, materia, id], function(err) {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+    res.send({ message: 'Question successfully updated', updatedID: id });
+  });
+});
+
 router.delete('/api/deleteQuestionById/:id', (req, res) => {
   const { id } = req.params;
 
