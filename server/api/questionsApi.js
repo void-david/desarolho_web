@@ -38,4 +38,17 @@ router.post('/api/post-questions', (req, res) => {
   });
 });
 
+router.delete('/api/deleteQuestionById/:id', (req, res) => {
+  const { id } = req.params;
+
+  const sql = `DELETE FROM Questions WHERE id = ?`;
+
+  db.run(sql, id, function(err) {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+    res.send({ message: 'Question successfully deleted', deletedID: id });
+  });
+});
+
 module.exports = router;
