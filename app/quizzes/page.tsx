@@ -13,6 +13,28 @@ import Link from 'next/link'
   const [answer4, setAnswer4] = useState('');
   const [answerCorrect, setAnswerCorrect] = useState('');
   const [materia, setMateria] = useState('');
+   
+  const [data, setData] = useState([]);
+
+  interface MateriaItem {
+    id: number;
+    materia: string;
+  }
+  
+  const getMaterias = async () => {
+    const res = await fetch('http://localhost:3001/api/get-materias', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  
+    const data = await res.json();
+  
+    const materias = data.map((item: MateriaItem) => item.materia);
+  
+    return materias;
+  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -37,6 +59,18 @@ import Link from 'next/link'
       });
   
       const data = await res.json();
+      console.log(data);
+    }
+    else if(action == 'read'){
+      const res = await fetch(`http://localhost:3001/api/get-questions/${materia}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      const data = await res.json();
+      setData(data);
       console.log(data);
     }
   };
@@ -130,26 +164,17 @@ import Link from 'next/link'
 
               {action === 'read' && (
               <>
-                <div className={styles.smallText}>Please select the Quiz and Question you want to read. </div>
+                <div className={styles.smallText}>Read the questions of a course </div>
                 <div className={styles.box}>
-                  <select className={styles.selector} defaultValue="">
-                    <option value="" disabled>Pick a Quiz
-                    </option>
-                    <option value="quiz1">Quiz 1</option>
-                    <option value="quiz2">Quiz 2</option>
-                    <option value="quiz3">Quiz 3</option>
-                  </select>
+                <input
+                      type="text"
+                      id="materia"
+                      value={materia}
+                      onChange={(e) => setMateria(e.target.value)}
+                      placeholder="Course"
+                />
+                  <h2>{JSON.stringify(data)}</h2>
 
-
-                  <select className={styles.selector} defaultValue="">
-                    <option value="" disabled>Pick a Question</option>
-                    
-                        {/* Aqui los values deben de cambiar a lo de question creo? no se @david */}
-                    <option value="quiz1">Question 1</option>
-                    <option value="quiz2">Question 2</option>
-                    <option value="quiz3">Question 3</option>
-                    <option value="quiz3">Question 4</option>
-                  </select>
                 </div>
                 </>
               )}
