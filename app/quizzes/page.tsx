@@ -4,7 +4,7 @@ import styles from '@/styles/quizzes.module.css'
 import Link from 'next/link'
 
 
- const quizzes = () =>{
+ const Quizzes = () =>{
   const [action, setAction] = useState('create');
   const [description, setDescription] = useState('');
   const [answer1, setAnswer1] = useState('');
@@ -412,4 +412,4 @@ import Link from 'next/link'
   );
 };
 
-export default quizzes
+export default Quizzes;

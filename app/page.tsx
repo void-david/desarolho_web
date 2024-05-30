@@ -10,7 +10,7 @@ import {
 } from '@clerk/nextjs';
 
 
-export default function Login() {
+function Login() {
   
   return (
     <>
@@ -30,7 +30,7 @@ export default function Login() {
       <div className={styles.rightPageContainer}>
 
         <div className={styles.rightMainContainer}>
-          <h1 style={{fontSize: '2rem', color: 'var(--secondary-color)', fontWeight: '700'}}>Let's Begin.</h1>
+          <h1 style={{fontSize: '2rem', color: 'var(--secondary-color)', fontWeight: '700'}}>Lets Begin.</h1>
 
           <div className={styles.buttonContainer}>
 
@@ -72,3 +72,5 @@ export default function Login() {
     </>
   );
 }
+
+export default Login;

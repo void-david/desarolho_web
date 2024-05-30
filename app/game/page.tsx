@@ -4,7 +4,7 @@ import styles from '@/styles/game.module.css'
 import React from 'react'
 import { Unity, useUnityContext } from "react-unity-webgl";
 
-function game() {
+function Game() {
     const { unityProvider } = useUnityContext({
         loaderUrl: "/LearningLimboV3/build/LearningLimboV3.loader.js",
         dataUrl: "/LearningLimboV3/build/LearningLimboV3.data",
@@ -29,4 +29,4 @@ function game() {
 
 }
 
-export default game
+export default Game;
