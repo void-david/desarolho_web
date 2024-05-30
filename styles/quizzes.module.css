@@ -3,27 +3,26 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
-
-}
-
-.leftContainer {
+  }
+  
+  .leftContainer {
     width: 35%;
     margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
-.buttonContainer {
+  }
+  
+  .buttonContainer {
     width: 100%;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--senary-color);
     overflow: hidden;
-}
-
-.formsButton{
+  }
+  
+  .formsButton {
     border: none;
     width: 25%;
     height: 2.5rem;
@@ -31,20 +30,20 @@
     color: var(--primary-color);
     font-weight: 700;
     cursor: pointer;
-}
-
-.formsButton:hover{
+  }
+  
+  .formsButton:hover {
     color: var(--quinary-color);
     text-decoration: underline;
-}
-.cardContainer {
+  }
+  .cardContainer {
     width: 60%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card {
     width: 250px;
     height: 250px;
     margin: 20px;
@@ -54,30 +53,29 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-}
-
-.cardContainer :hover{
+  }
+  
+  .cardContainer :hover {
     transform: scale(1.05);
     transition: transform 0.3s;
-
-}
-
-.cardImage{
+  }
+  
+  .cardImage {
     width: 100%;
     height: 60%;
     background-color: var(--tertiary-color);
     display: flex;
-}
-
-.cardContent{
+  }
+  
+  .cardContent {
     overflow: hidden;
     margin: 1rem;
-    text-align: start;
+    text-align: center;
     display: flex;
     flex-direction: column;
-}
-
-.formCard{
+  }
+  
+  .formCard {
     width: 80%;
     border-radius: 10px;
     background-color: white;
@@ -87,69 +85,105 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.smallText{
+  }
+  
+  .smallText {
     font-size: 0.8rem;
     color: var(--senary-color);
     text-align: center;
-}
-
-.valuesSection{
+    padding: 0.5rem;
+  }
+  
+  .valuesSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     width: 100%;
     margin: 1rem;
-}
-
-.box{
+  }
+  
+  .box {
     display: flex;
     justify-content: space-around;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-}
-.boxButton{
+  }
+  
+  .box_read{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin: 1rem;
+      text-align: center;
+  }
+  
+  .box_read input{
+      text-align: center;
+  }
+  
+  .boxButtons {
+      display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+    width: 50%;
     padding: 0.1rem;
-    margin: 0.1rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .boxButtons button{
+      width: 40%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: var(--quaternary-color);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      
+  }
+  
+  .box input {
+    width: 80%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .box select {
+    width: 40%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    align-self: center;
+    justify-self: space-around;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: var(--quaternary-color);
     color: white;
     font-weight: 700;
     cursor: pointer;
-
-}
-
-.box input{
-    width: 100%;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.submitButton{
-    width: 100%;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: var(--quaternary-color);
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.submitButton:hover{
+  }
+  
+  .submitButton:hover {
     background-color: var(--septary-color);
-}
-
-.selector {
+  }
+  
+  .selector {
     width: 40%;
     padding: 10px;
     margin: 10px 0;
@@ -160,8 +194,8 @@
     color: #333;
     outline: none;
     appearance: none;
-    -webkit-appearance: none; 
-    -moz-appearance: none;   
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 6.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 .354.854l-6 6a.5.5 0 0 1-.708 0l-6-6A.5.5 0 0 1 1.5 6.5zm0-4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 .354.854l-6 6a.5.5 0 0 1-.708 0l-6-6A.5.5 0 0 1 1.5 2.5z"/></svg>');
     background-repeat: no-repeat;
     background-position: right 10px center;
@@ -186,20 +220,19 @@
     color: #999;
     cursor: not-allowed;
   }
-
-.selector option[disabled][selected] {
-    color: #999; 
+  
+  .selector option[disabled][selected] {
+    color: #999;
   }
-
-@media screen and (max-width: 976px){
-    .mainContainer{
-        flex-direction: column;
+  
+  @media screen and (max-width: 976px) {
+    .mainContainer {
+      flex-direction: column;
     }
-    .cardContainer{
-        width: 100%;
+    .cardContainer {
+      width: 100%;
     }
-    .leftContainer{
-        width: 100%;
+    .leftContainer {
+      width: 100%;
     }
-    
-}
+  }

@@ -12,8 +12,9 @@ import Link from 'next/link'
   const [answer3, setAnswer3] = useState('');
   const [answer4, setAnswer4] = useState('');
   const [answerCorrect, setAnswerCorrect] = useState('');
-  const [materia, setMateria] = useState('');
+  const [materia, setMateria] = useState("Chemistry");
   const [preg, setPreg] = useState(0);
+  const [isGetSub, setIsGetSub] = useState(false);
    
   const placeholderData = [{
     id: 11,
@@ -50,6 +51,7 @@ import Link from 'next/link'
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsGetSub(true);
 
     if(action == 'create'){
       const question = {
@@ -177,21 +179,26 @@ import Link from 'next/link'
               {action === 'read' && (
               <>
                 <div className={styles.smallText}>Read the questions of a course </div>
-                <div className={styles.box}>
+                <div className={styles.box_read}>
                 <input
                       type="text"
                       id="materia"
                       value={materia}
-                      onChange={(e) => setMateria(e.target.value)}
+                      onChange={(e) => {
+                        setMateria(e.target.value);
+                      }}
                       placeholder="Course"
                 />
-                <div className={styles.boxButton}>
-                 {[1, 2, 3, 4, 5].map((num) => (
-                    <button key={num} onClick={() => setPreg(num - 1)}>
-                      {num}
-                    </button>
-                  ))}
-                </div>
+                
+                {isGetSub && (
+                  <div className={styles.boxButtons}>
+                    {[1, 2, 3, 4, 5].map((num) => (
+                      <button key={num} onClick={() => setPreg(num - 1)}>
+                        {num}
+                      </button>
+                    ))}
+                  </div>
+                )}
                   
                   <div>
                     <p>{`ID: ${data[preg].id}`}</p>
