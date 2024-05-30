@@ -181,7 +181,7 @@ import Link from 'next/link'
                 <input
                       type="text"
                       id="materia"
-                      value={materia || "Math"}
+                      value={materia}
                       onChange={(e) => setMateria(e.target.value)}
                       placeholder="Course"
                 />
