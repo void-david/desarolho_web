@@ -14,7 +14,18 @@ import Link from 'next/link'
   const [answerCorrect, setAnswerCorrect] = useState('');
   const [materia, setMateria] = useState('');
    
-  const [data, setData] = useState([]);
+  const placeholderData = [{
+    id: 11,
+    description: "Question updated",
+    answer_1: "First possible answer",
+    answer_2: "Second possible answer",
+    answer_3: "Third possible answer",
+    answer_4: "Fourth possible answer",
+    answer_correct: "Correct answer",
+    materia: "Subject of the question"
+  }];
+  
+  const [data, setData] = useState(placeholderData);
 
   interface MateriaItem {
     id: number;
@@ -173,7 +184,17 @@ import Link from 'next/link'
                       onChange={(e) => setMateria(e.target.value)}
                       placeholder="Course"
                 />
-                  <h2>{JSON.stringify(data)}</h2>
+                  
+                  <div>
+                  <p>{`ID: ${data[0].id}`}</p>
+                  <p>{`Description: ${data[0].description}`}</p>
+                  <p>{`Answer 1: ${data[0].answer_1}`}</p>
+                  <p>{`Answer 2: ${data[0].answer_2}`}</p>
+                  <p>{`Answer 3: ${data[0].answer_3}`}</p>
+                  <p>{`Answer 4: ${data[0].answer_4}`}</p>
+                  <p>{`Correct Answer: ${data[0].answer_correct}`}</p>
+                  <p>{`Materia: ${data[0].materia}`}</p>
+                  </div>  
 
                 </div>
                 </>
