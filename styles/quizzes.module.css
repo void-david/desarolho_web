@@ -107,7 +107,22 @@
 .box{
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     width: 100%;
+}
+.boxButton{
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0.1rem;
+    margin: 0.1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--quaternary-color);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+
 }
 
 .box input{

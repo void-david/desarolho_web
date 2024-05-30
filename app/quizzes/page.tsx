@@ -13,6 +13,7 @@ import Link from 'next/link'
   const [answer4, setAnswer4] = useState('');
   const [answerCorrect, setAnswerCorrect] = useState('');
   const [materia, setMateria] = useState('');
+  const [preg, setPreg] = useState(0);
    
   const placeholderData = [{
     id: 11,
@@ -180,21 +181,28 @@ import Link from 'next/link'
                 <input
                       type="text"
                       id="materia"
-                      value={materia}
+                      value={materia || "Math"}
                       onChange={(e) => setMateria(e.target.value)}
                       placeholder="Course"
                 />
+                <div className={styles.boxButton}>
+                 {[1, 2, 3, 4, 5].map((num) => (
+                    <button key={num} onClick={() => setPreg(num - 1)}>
+                      {num}
+                    </button>
+                  ))}
+                </div>
                   
                   <div>
-                  <p>{`ID: ${data[0].id}`}</p>
-                  <p>{`Description: ${data[0].description}`}</p>
-                  <p>{`Answer 1: ${data[0].answer_1}`}</p>
-                  <p>{`Answer 2: ${data[0].answer_2}`}</p>
-                  <p>{`Answer 3: ${data[0].answer_3}`}</p>
-                  <p>{`Answer 4: ${data[0].answer_4}`}</p>
-                  <p>{`Correct Answer: ${data[0].answer_correct}`}</p>
-                  <p>{`Materia: ${data[0].materia}`}</p>
-                  </div>  
+                    <p>{`ID: ${data[preg].id}`}</p>
+                    <p>{`Description: ${data[preg].description}`}</p>
+                    <p>{`Answer 1: ${data[preg].answer_1}`}</p>
+                    <p>{`Answer 2: ${data[preg].answer_2}`}</p>
+                    <p>{`Answer 3: ${data[preg].answer_3}`}</p>
+                    <p>{`Answer 4: ${data[preg].answer_4}`}</p>
+                    <p>{`Correct Answer: ${data[preg].answer_correct}`}</p>
+                    <p>{`Materia: ${data[preg].materia}`}</p>
+                  </div>
 
                 </div>
                 </>
