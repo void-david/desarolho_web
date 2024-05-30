@@ -44,6 +44,7 @@ export default function Navbar() {
           <Link className={styles.navlink} href="/quizzes">Quizzes</Link>
           <Link className={styles.navlink} href="/students">Students</Link>
           <Link className={styles.navlink} href="/statistics">Statistics</Link>
+          <Link className={styles.navlink} href="/ML">ML</Link>
         </div>
 
         <div className={styles.menu}>
@@ -71,6 +72,7 @@ export default function Navbar() {
             <Link className={styles.navlink} href="/quizzes">Quizzes</Link>
             <Link className={styles.navlink} href="/students">Students</Link>
             <Link className={styles.navlink} href="/statistics">Statistics</Link>
+            <Link className={styles.navlink} href="/ML">ML</Link>
           </div>
           
         </div>
