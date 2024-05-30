@@ -1,38 +1,34 @@
+// pages/generate-story.js
 'use client';
-import {Configuration} from 'openai/dist/configuration';
-import {OpenAIApi} from 'openai/dist/api';
-import React, {useState} from 'react';
+import { useState, useEffect } from 'react';
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-const Page = () => {  
-  const [query, setQuery] = useState('');
-  const [result, setResult] = useState('');
-  
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setQuery(e.target.value);
-  };
+export default function GenerateStory() {
+  const [story, setStory] = useState('');
 
-  const handleKey = async () => {
-    const configuration = new Configuration({
-      apiKey: process.env.NExt_PUBLIC_OPENAI_API,
-    });
+  useEffect(() => {
+    const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_API_KEY);
 
-    const openAi = new OpenAIApi(configuration);
+    async function fetchStory() {
+      try {
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const prompt = "Write a story about a magic backpack.";
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = await response.text();
+        setStory(text);
+      } catch (error) {
+        console.error('Error generating story:', error);
+      }
+    }
 
-    const res = await openAi.createCompletion({
-      model: 'text-davinci-003',
-      prompt: query,
-      max_tokens: 300,
-      temperature: 1,
-    });
-    setResult(res.data.choices[0].text!);
-  };
-  
-  return(
+    fetchStory();
+  }, []);
+
+  return (
     <div>
-      <textarea name ="" id=""cols={50} rows ={10} onChange={handleChange} />
-      <button onClick={handleKey}>Submit</button>
-      <div>{result}</div>
+      <h1>Generated Story</h1>
+      <p>{story}</p>
     </div>
   );
-};
-export default Page
+}
