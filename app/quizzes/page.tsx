@@ -34,7 +34,7 @@ import Link from 'next/link'
   }
   
   const getMaterias = async () => {
-    const res = await fetch('http://localhost:3001/api/get-materias', {
+    const res = await fetch('https://desarolhoweb-production.up.railway.app/api/get-materias', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ import Link from 'next/link'
         materia,
       };
   
-      const res = await fetch('http://localhost:3001/api/post-questions', {
+      const res = await fetch('https://desarolhoweb-production.up.railway.app/api/post-questions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ import Link from 'next/link'
       console.log(data);
     }
     else if(action == 'read'){
-      const res = await fetch(`http://localhost:3001/api/get-questions/${materia}`, {
+      const res = await fetch(`https://desarolhoweb-production.up.railway.app/api/get-questions/${materia}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
