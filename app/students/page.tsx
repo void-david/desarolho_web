@@ -3,7 +3,7 @@ import styles from '@/styles/students.module.css'
 import { AiFillStar } from "react-icons/ai";
 
 
-function students() {
+function Students() {
   return (
     <>
     <div className={styles.header}> Students</div>
@@ -74,4 +74,4 @@ function students() {
   )
 }
 
-export default students
+export default Students;
