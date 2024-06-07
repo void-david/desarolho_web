@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/clerk-sdk-node": "^5.0.10",
     "@clerk/nextjs": "^5.1.0",
     "@google-cloud/vertexai": "^1.2.0",
     "@google/generative-ai": "^0.12.0",

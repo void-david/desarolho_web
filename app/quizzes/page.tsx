@@ -15,6 +15,10 @@ import Link from 'next/link'
   const [materia, setMateria] = useState("Chemistry");
   const [preg, setPreg] = useState(0);
   const [isGetSub, setIsGetSub] = useState(false);
+  const [materias, setMaterias] = useState([]);
+  const [selectedMateria, setSelectedMateria] = useState("Chemistry");
+
+  
    
   const placeholderData = [{
     id: 11,
