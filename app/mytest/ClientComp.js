@@ -7,8 +7,6 @@ const ClientComp = ({children}) => {
     const [state, setState] = useState(0);
     const { user } = useUser();
     
-    
-    
     return (
         <div>
         <button onClick={() => setState(state + 1)}>Click me</button>
