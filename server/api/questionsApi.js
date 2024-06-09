@@ -77,4 +77,26 @@ router.delete('/api/deleteQuestionById/:id', (req, res) => {
   });
 });
 
+router.delete('/api/deleteLastQuestion', (req, res) => {
+  const sqlFindLast = `SELECT id FROM Questions ORDER BY id DESC LIMIT 1`;
+
+  db.get(sqlFindLast, [], (err, row) => {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+
+    if (row) {
+      const sqlDelete = `DELETE FROM Questions WHERE id = ?`;
+      db.run(sqlDelete, row.id, function(err) {
+        if (err) {
+          return res.status(500).send(err.message);
+        }
+        res.send({ message: 'Last question successfully deleted', deletedID: row.id });
+      });
+    } else {
+      res.status(404).send({ message: 'No question found to delete' });
+    }
+  });
+});
+
 module.exports = router;
