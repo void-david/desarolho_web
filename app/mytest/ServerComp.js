@@ -15,7 +15,7 @@ const ServerComp = async () => {
     const user = await currentUser();
 
     const userList = await clerkClient.users.getUserList();
-    //console.log(userList);
+    console.log(userList);
 
     return (
         <div>

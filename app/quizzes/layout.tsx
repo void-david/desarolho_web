@@ -1,6 +1,5 @@
 import styles from '@/styles/quizzes.module.css'
 import Link from 'next/link'
-import Gamelink from '../components/gamelink'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -27,8 +26,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {children}
             </div>
         </div>
-
-        <Gamelink />
       </div>
         
         </>

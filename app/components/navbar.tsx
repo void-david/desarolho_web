@@ -41,6 +41,7 @@ export default function Navbar() {
         </Link>
         <div className={styles.navlinks}>
           <Link className={styles.navlink} href="/home">Home</Link>
+          <Link className={styles.navlink} href="/game">Game</Link>
           <Link className={styles.navlink} href="/quizzes">Quizzes</Link>
           <Link className={styles.navlink} href="/students">Students</Link>
           <Link className={styles.navlink} href="/statistics">Statistics</Link>
