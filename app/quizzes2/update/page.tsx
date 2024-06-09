@@ -56,9 +56,7 @@ export default function Update() {
         <h2>Update Question</h2>
             <div className={styles.box}>
               <select className={styles.selector}>
-        {materias.map((materia, index) => (
-          <option key={index} value={materia.materia}>{materia.materia}</option>
-        ))}
+        
       </select>
 
             </div>
