@@ -14,7 +14,7 @@ type Question = {
   materia: string;
 };
 
-export default function Create() {
+export default function Read() {
   
     const [questions, setQuestions] = useState<Question[]>([]);
     const [selectedMateria, setSelectedMateria] = useState('');

@@ -2,7 +2,7 @@
 import styles from '@/styles/quizzes.module.css'
 
 
-export default function Create() {
+export default function Delete() {
     //node fetch() to send data to the server
     const handleSubmit = async (e: any) => {
         e.preventDefault();

@@ -1,120 +1,74 @@
 'use client';
 import styles from '@/styles/quizzes.module.css'
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
+
+type Question = {
+  id: number;
+  description: string;
+  answer_1: string;
+  answer_2: string;
+  answer_3: string;
+  answer_4: string;
+  answer_correct: string;
+  materia: string;
+};
 
 export default function Update() {
-  const [materias, setMaterias] = useState([]);
+  
+    const [questions, setQuestions] = useState<Question[]>([]);
+    const [selectedMateria, setSelectedMateria] = useState('');
 
-  const fetchMaterias = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/api/get-materias');
-      const data = await response.json();
-      setMaterias(data);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
 
-  useEffect(() => {
-    fetchMaterias();
-  }, []);
 
-    const handleSubmit = async (e: any) => {
-        e.preventDefault();
-        const description = e.target.description.value;
-        const answer_1 = e.target.answer1.value;
-        const answer_2 = e.target.answer2.value;
-        const answer_3 = e.target.answer3.value;
-        const answer_4 = e.target.answer4.value;
-        const answer_correct = e.target.answerCorrect.value;
-        const materia = e.target.materia.value;
-        const res = await fetch('http://localhost:3001/api/post-questions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            description,
-            answer_1,
-            answer_2,
-            answer_3,
-            answer_4,
-            answer_correct,
-            materia,
-          }),
-        });
-        if (res.status === 200) {
-          alert('Question successfully added');
-        } else {
-          alert('An error occurred');
-        }
-      }
+    const handleSubmit = async () => {
+      const res = await fetch('http://localhost:3001/api/get-questions', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await res.json();
+      setQuestions(data);
+    };
+
+    useEffect(() => {
+      // Fetch questions when component mounts
+      handleSubmit();
+    }, []);
+
+    const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setSelectedMateria(e.target.value);
+    };
+    
+
     return (
       <>
         <form className={styles.valuesSection} onSubmit={handleSubmit}>
-        <h2>Update Question</h2>
-            <div className={styles.box}>
-              <select className={styles.selector}>
-        
-      </select>
-
-            </div>
-            <div className={styles.box}>
-            <input
-                type="text"   
-                id="description"
-                placeholder="Write here your question"
-            />
-            </div>
-            <div className={styles.box}>
-            <input
-                type="text"
-                id="answer1"
-                placeholder="Answer 1"
-            />
-            </div>
-            <div className={styles.box}>
-            <input
-                type="text"
-                id="answer2"
-                placeholder="Answer 2"
-            />
-            </div>
-            <div className={styles.box}>
-            <input
-                type="text"
-                id="answer3"
-                placeholder="Answer 3"
-            />
-            </div>
-            <div className={styles.box}>
-            <input
-                type="text"
-                id="answer4"
-                placeholder="Answer 4"
-            />
-            </div>
-            <div className={styles.box}>
-            <input
-                type="text"
-                id="answerCorrect"
-                placeholder="Correct Answer"
-            />
-            </div>
-            <div className={styles.box}>
-            <input
-                type="text"
-                id="materia"
-                placeholder="Course"
-            />
-            </div>
-            <div className={styles.box}>
-                <button className={styles.submitButton} type="submit">
-                Submit
-                </button>
-            </div>
+          <h2>Update Question</h2>
+          <div className={styles.box}>
+          </div>
         </form>
+        <select className={styles.selector} value={selectedMateria} onChange={handleSelectChange}>
+          <option value="">All</option>
+          {questions
+          .map(question => question.materia)
+          .filter((materia, index, self) => self.indexOf(materia) === index)
+          .map((materia, index) => (
+            <option key={index} value={materia}>
+              {materia}
+            </option>
+          ))}
+        </select>
+        {questions
+          .filter((question) => !selectedMateria || question.materia === selectedMateria)
+          .map((question, index) => (
+            <div key={index}>
+              <h3>{question.description}</h3>
+              <p>{question.materia}</p>
+            </div>
+          ))}
       </>
     )
   }

@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className={styles.leftContainer}>
             <div className={styles.formCard}>
             <div className={styles.buttonContainer}>
-                <Link href="/quizzes/create">
+                <Link href="/quizzes">
                   <button className={styles.formsButton}>Create</button>
                 </Link>
                 <Link href="/quizzes/read">
