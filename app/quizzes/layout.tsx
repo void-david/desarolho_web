@@ -1,30 +1,34 @@
 import styles from '@/styles/quizzes.module.css'
 import Link from 'next/link'
+import Gamelink from '../components/gamelink'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
       <>
-        <div>{children}</div>
-
-
       <div className={styles.mainContainer}>
 
         <div className={styles.leftContainer}>
             <div className={styles.formCard}>
             <div className={styles.buttonContainer}>
-                <button className={styles.formsButton}>Create</button>
-                <button className={styles.formsButton}>Read</button>
-                <button className={styles.formsButton}>Update</button>
-                <button className={styles.formsButton}>Delete</button>
+                <Link href="/quizzes/create">
+                  <button className={styles.formsButton}>Create</button>
+                </Link>
+                <Link href="/quizzes/read">
+                  <button className={styles.formsButton}>Read</button>
+                </Link>
+                <Link href="/quizzes/update">
+                  <button className={styles.formsButton}>Update</button>
+                </Link>
+                <Link href="/quizzes/delete">
+                  <button className={styles.formsButton}>Delete</button>
+                </Link>
+
             </div>
-            <form className={styles.valuesSection}>
-                <div className={styles.smallText}>Please complete the fields below with your question 
-                and possible answers.</div>
-            </form>
+            {children}
             </div>
         </div>
 
-        
+        <Gamelink />
       </div>
         
         </>
