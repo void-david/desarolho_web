@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import styles from '@/styles/quizzes.module.css'
-import Link from 'next/link'
+import Gamelink from '../components/gamelink';
 
 
  const Quizzes = () =>{
@@ -328,11 +328,7 @@ import Link from 'next/link'
 
                 </div>
               )}
-              <div className={styles.box}>
-                <button className={styles.submitButton} type="submit">
-                  Submit
-                </button>
-              </div>
+              
             </form>
 
 
@@ -342,26 +338,12 @@ import Link from 'next/link'
       </div>
 
 
-      <div className={styles.cardContainer}>
-      <Link style={{textDecoration: 'none'}} href="https://fernandotenchipe.github.io/LearningLimbo/">
-      <div className={styles.card}>
-      <div className={styles.cardImage}></div>
-            <div className={styles.cardContent}>
-              <p>Play Game!</p>
-            </div>
-            
-      </div>
-
-      </Link>
-
-        
-
-      </div>
+      
 
 
-
+      <Gamelink />
     </div>
-
+    
 
     </>
   );
