@@ -92,7 +92,7 @@ const Clases = () => {
       {clases.map((clase) => (
         <div className={styles.bigCard} key={clase.id}>
           <h2>{clase.clase}</h2>
-          <h3>Teacher: {clase.maestro}</h3>
+          <p>Teacher: {clase.maestro}</p>
           <h3>Students:</h3>
           {alumnos
               .filter(alumno => alumno.clase === clase.clase)
