@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../db'); // adjust the path according to your project structure
 
 router.get('/api/get-alumnos', (req, res) => {
-    const sql = 'SELECT nombre FROM Alumnos';
+    const sql = 'SELECT * FROM Alumnos';
   
     db.all(sql, [], (err, rows) => {
       if (err) {
