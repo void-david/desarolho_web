@@ -6,7 +6,7 @@ import LearningLimboImage from '@/public/learningLimboGame.jpeg'
 export default function Gamelink() {
   return (
     <div className={styles.cardContainer}>
-      <Link className={styles.card} style={{textDecoration: 'none'}} href="https://fernandotenchipe.github.io/LearningLimbo/">
+      <Link className={styles.card} style={{textDecoration: 'none'}} href="https://simmer.io/@fer1234/lb">
       <Image
       src={LearningLimboImage}
       style={{width: 'auto', height: '100%'}}
