@@ -6,7 +6,7 @@ export default function Delete() {
     //node fetch() to send data to the server
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        const res = await fetch('http://localhost:3001/api/deleteLastQuestion', {
+        const res = await fetch('https://desarolhoweb-production.up.railway.app/api/deleteLastQuestion', {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',

@@ -22,7 +22,7 @@ const Clases = () => {
   const [alumnos, setAlumnos] = useState<Alumno[]>([]);
 
   const crearAlumno = async (clase: string, alumno: string) => {
-    const res = await fetch('http://localhost:3001/api/crear-alumno', {
+    const res = await fetch('https://desarolhoweb-production.up.railway.app/api/crear-alumno', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const Clases = () => {
   };
 
   const crearClase = async (clase: string, maestro: string) => {
-    const res = await fetch('http://localhost:3001/api/crear-clase', {
+    const res = await fetch('https://desarolhoweb-production.up.railway.app/api/crear-clase', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const Clases = () => {
 
 
   const getClases = async () => {
-    const res = await fetch('http://localhost:3001/api/get-clases', {
+    const res = await fetch('https://desarolhoweb-production.up.railway.app/api/get-clases', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ const Clases = () => {
   };
 
   const getAlumnos = async () => {
-    const res = await fetch('http://localhost:3001/api/get-alumnos', {
+    const res = await fetch('https://desarolhoweb-production.up.railway.app/api/get-alumnos', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

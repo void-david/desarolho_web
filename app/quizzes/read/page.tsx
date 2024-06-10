@@ -22,7 +22,7 @@ export default function Read() {
 
 
     const handleSubmit = async () => {
-      const res = await fetch('http://localhost:3001/api/get-questions', {
+      const res = await fetch('https://desarolhoweb-production.up.railway.app/api/get-questions', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ export default function Create() {
         const answer_4 = e.target.answer4.value;
         const answer_correct = e.target.answerCorrect.value;
         const materia = e.target.materia.value;
-        const res = await fetch('http://localhost:3001/api/post-questions', {
+        const res = await fetch('https://desarolhoweb-production.up.railway.app/api/post-questions', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
