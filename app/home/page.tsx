@@ -54,7 +54,7 @@ export default function Home() {
     const { isLoaded, isSignedIn, user } = useUser();
     const [answers, setAnswers] = useState<Answer[]>([]);
     const getAnswers = async () => {
-        const res = await fetch('http://localhost:3001/api/get-answers', {
+        const res = await fetch('https://desarolhoweb-production.up.railway.app/api/get-answers', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
