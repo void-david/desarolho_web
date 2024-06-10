@@ -99,7 +99,11 @@ const Clases = () => {
               </div>
               ))
           }
-          <button className={styles.submitButton} onClick={() => crearAlumno(clase.clase, user && user.firstName ? user.firstName : 'Unknown')}>
+          <button className={styles.submitButton} 
+          onClick={() => {
+            crearAlumno(clase.clase, user && user.firstName ? user.firstName : 'Unknown')
+            getAlumnos();
+            }}>
             Join this class!
           </button>
         </div>
