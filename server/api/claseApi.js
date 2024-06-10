@@ -4,7 +4,7 @@ const db = require('../db'); // adjust the path according to your project struct
 
 
 router.get('/api/get-clases', (req, res) => {
-    const sql = 'SELECT clase FROM Clases';
+    const sql = 'SELECT * FROM Clases';
   
     db.all(sql, [], (err, rows) => {
       if (err) {

@@ -6,7 +6,9 @@ import styles from '@/styles/clases.module.css';
 
 
 interface Clase {
+  id: number;
   clase: string;
+  maestro: string;
 }
 interface Alumno {
     id: number
@@ -87,9 +89,10 @@ const Clases = () => {
   return (
     <main className={styles.mainContainer}>
       <div className={styles.tableSection}>
-      {clases.map((clase, index) => (
-        <div className={styles.bigCard} key={index}>
+      {clases.map((clase) => (
+        <div className={styles.bigCard} key={clase.id}>
           <h2>{clase.clase}</h2>
+          <h3>Teacher: {clase.maestro}</h3>
           <h3>Students:</h3>
           {alumnos
               .filter(alumno => alumno.clase === clase.clase)
