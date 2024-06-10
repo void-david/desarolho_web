@@ -1,9 +1,44 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+
+}
+
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1rem;
     color: var(--primary-color);
+}
+
+.person{
+    display: flex;
+    max-height: 7rem;
+
+}
+
+.avatarContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    max-width: 7rem;
+    background-color: blueviolet;
+
+}
+
+.avatar{
+    display: flex;
+    width: 100%;
+    max-height: 100%;
+    background-color: aqua;
+
 }
 
 .tableRow {

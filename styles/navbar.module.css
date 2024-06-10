@@ -44,6 +44,11 @@
   justify-content: space-between;
 }
 
+.navlink:hover{
+  color: var(--quinary-color);
+  text-decoration: underline;
+}
+
 .accountButton{
   display: flex;
   flex-wrap: wrap;
