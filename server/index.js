@@ -18,6 +18,8 @@ app.use(bodyParser.json());
 
 app.use(require('./api/questionsApi'));
 app.use(require('./api/answersApi'));
+app.use(require('./api/claseApi'));
+app.use(require('./api/alumnoApi'));
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
