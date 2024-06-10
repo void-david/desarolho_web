@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useUser } from "@clerk/clerk-react";
 import { get } from 'http';
+import styles from '@/styles/clases.module.css';
 
 
 interface Clase {
@@ -84,44 +85,48 @@ const Clases = () => {
   }, []);
 
   return (
-    <div>
-    {clases.map((clase, index) => (
-      <div key={index}>
-        <h2>{clase.clase}</h2>
-        <p>Students:</p>
-        {alumnos
-            .filter(alumno => alumno.clase === clase.clase)
-            .map((alumno) => (
-            <div key={alumno.id}>
-                <p>{alumno.alumno}</p>
-            </div>
-            ))
-        }
-        <button onClick={() => crearAlumno(clase.clase, user && user.firstName ? user.firstName : 'Unknown')}>
-          Join this class!
+    <main className={styles.mainContainer}>
+      <div className={styles.tableSection}>
+      {clases.map((clase, index) => (
+        <div className={styles.bigCard} key={index}>
+          <h2>{clase.clase}</h2>
+          <p>Students:</p>
+          {alumnos
+              .filter(alumno => alumno.clase === clase.clase)
+              .map((alumno) => (
+              <div key={alumno.id}>
+                  <p>{alumno.alumno}</p>
+              </div>
+              ))
+          }
+          <button className={styles.submitButton} onClick={() => crearAlumno(clase.clase, user && user.firstName ? user.firstName : 'Unknown')}>
+            Join this class!
+          </button>
+        </div>
+      ))}
+
+      <div className={styles.bigCard}>
+        <h2>Create a new class</h2>
+        <div className={styles.box}>
+          <input  type="text" id="new-class" />
+        </div>
+
+        <button className={styles.submitButton}
+          onClick={() => {
+            const newClass = document.getElementById('new-class') as HTMLInputElement;
+            if (newClass) {
+              crearClase(newClass.value, user && user.firstName ? user.firstName : 'Unknown');
+                getClases();
+            }
+            }}>
+            Add new class
         </button>
       </div>
-    ))}
+      </div>
 
-    <h2>Create a new class</h2>
-    <input type="text" id="new-class" />
-    <button
-      onClick={() => {
-        const newClass = document.getElementById('new-class') as HTMLInputElement;
-        if (newClass) {
-          crearClase(newClass.value, user && user.firstName ? user.firstName : 'Unknown');
-            getClases();
-        }
-        }}>
-        Add new class
-    </button>
-
-    <div>
-  
-</div>
 
     
-  </div>
+    </main>
   );
 };
 
