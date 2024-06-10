@@ -68,6 +68,7 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
+    border: 1px solid var(--septary-color);
     background-color: white;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -80,6 +81,7 @@
     height: 250px;
     margin: 20px;
     justify-content: space-around;
+    border: 1px solid var(--septary-color);
     align-items: center;
     border-radius: 50%;
     background-color: white;
@@ -93,6 +95,7 @@
     width: 750px;
     margin: 20px;
     border-radius: 10px;
+    border: 1px solid var(--septary-color);
     background-color: white;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
