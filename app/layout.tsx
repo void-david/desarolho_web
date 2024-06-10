@@ -11,7 +11,7 @@ const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: ['400', '500', '600',
 
 export const metadata: Metadata = {
   title: "Learning Limbo",
-  description: "Made by Kaled Enriquez, David Lozano, Gerardo Leiva, Fernando tenchipe,Hans Gerhard",
+  description: "Made by Kaled Enriquez, David Lozano, Gerardo Leiva, Fernando tenchipe, Hans Gerhard",
 };
 
 export default function RootLayout({
