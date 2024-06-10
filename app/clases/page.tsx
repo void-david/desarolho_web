@@ -90,7 +90,7 @@ const Clases = () => {
       {clases.map((clase, index) => (
         <div className={styles.bigCard} key={index}>
           <h2>{clase.clase}</h2>
-          <p>Students:</p>
+          <h3>Students:</h3>
           {alumnos
               .filter(alumno => alumno.clase === clase.clase)
               .map((alumno) => (
