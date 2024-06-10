@@ -75,9 +75,10 @@ export default function Navbar() {
             </SignInButton>
           </SignedOut>
             <Link className={styles.navlink} href="/home">Home</Link>
-            <Link className={styles.navlink} href="/quizzes">Quizzes</Link>
-            <Link className={styles.navlink} href="/students">Students</Link>
-            <Link className={styles.navlink} href="/statistics">Statistics</Link>
+            <Link className={styles.navlink} href="/game">Game</Link>
+            <Link className={styles.navlink} href="/clases">Classes</Link>
+            {isAdmin ? <Link className={styles.navlink} href="/quizzes">Quizzes</Link> : null}
+            {isAdmin ? <Link className={styles.navlink} href="/students">Users</Link> : null}
             <Link className={styles.navlink} href="/ML">ML</Link>
           </div>
           
