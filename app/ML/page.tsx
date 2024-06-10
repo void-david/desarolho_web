@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Markdown from 'react-markdown'
 import styles from '@/styles/home.module.css';
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
@@ -26,17 +27,24 @@ const Page = () => {
   };
   
   return(
-    <div className={styles.bigCard}>
-      <h2>Learning Limbo GPT</h2>
-      <div className={styles.feedbackWritingSpace}>
-        <textarea className={styles.feedbackTextarea} 
-        placeholder="Ask me anything."
-        name ="" id=""cols={50} rows ={10} onChange={handleChange} />
+    <div className={styles.mainContainer}>
+      <div className={styles.cardContainer}>
+        <div className={styles.bigCard}>
+          <h2>Learning Limbo GPT</h2>
+          <div className={styles.feedbackWritingSpace}>
+            <textarea className={styles.feedbackTextarea} 
+            placeholder="Ask me anything."
+            name ="" id=""cols={50} rows ={10} onChange={handleChange} />
+          </div>
+          
+          <button className={styles.submitButton} onClick={handleKey}>Submit</button>
+          <div className={styles.result}>
+            <Markdown>{result}</Markdown>
+          </div>
+        </div>
       </div>
-      
-      <button className={styles.submitButton} onClick={handleKey}>Submit</button>
-      <div>{result}</div>
     </div>
   );
 };
-export default Page
+
+export default Page;
