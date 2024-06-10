@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import styles from '@/styles/home.module.css';
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const Page = () => {  
@@ -25,9 +26,15 @@ const Page = () => {
   };
   
   return(
-    <div>
-      <textarea name ="" id=""cols={50} rows ={10} onChange={handleChange} />
-      <button onClick={handleKey}>Submit</button>
+    <div className={styles.bigCard}>
+      <h2>Learning Limbo GPT</h2>
+      <div className={styles.feedbackWritingSpace}>
+        <textarea className={styles.feedbackTextarea} 
+        placeholder="Ask me anything."
+        name ="" id=""cols={50} rows ={10} onChange={handleChange} />
+      </div>
+      
+      <button className={styles.submitButton} onClick={handleKey}>Submit</button>
       <div>{result}</div>
     </div>
   );
