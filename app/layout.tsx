@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Inter, Kumbh_Sans, Rubik } from "next/font/google";
 import { usePathname } from 'next/navigation'
 import Navbar from "@/app/components/navbar";
+import Footer from "@/app/components/footer";
 import styles from "@/styles/layout.module.css";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+
 
 const inter = Inter({ subsets: ["latin"], weight: ['400', '500', '600', '700'], style: ['normal'] });
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: ['400', '500', '600', '700'], style: ['normal'] });
@@ -26,6 +28,7 @@ export default function RootLayout({
           
           <Navbar/>
           {children}
+          <Footer/>
           
         </body>
       </html>
