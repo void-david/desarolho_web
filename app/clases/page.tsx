@@ -131,7 +131,7 @@ const Clases = () => {
       <div className={styles.bigCard}>
         <h2>Create a new class</h2>
         <div className={styles.box}>
-          <input  type="text" id="new-class" />
+          <input  type="text" id="new-class" autoComplete='off'/>
         </div>
 
         <button className={styles.submitButton}
