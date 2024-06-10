@@ -80,14 +80,14 @@ export default function Home() {
                 </div>
 
                 <div className={styles.subHeader}>
-                    Last (4) Quizzes Scores:
+                    Last (4) quiz certainty levels:
                 </div>
 
                 <div className={styles.cardContainer}>
                     <div className={styles.leftCardContainer}>
                     {answers.slice(-4).map((answer, index) => (
                         <div key={index} className={styles.card}>
-                            <p>Score:</p>
+                            <p>Certainty:</p>
                             <h1>{answer.certainty}%</h1>
                             <p>Quiz {index + 1}</p>
                         </div>
@@ -114,30 +114,39 @@ export default function Home() {
 
                     </div>
                     <div className={styles.rightCardContainer}>
-                        <div className={styles.card}>
-                            <div className={styles.stats}>
-                                <Bar
-                                data={{
-                                    labels: ['January', 'February', 'March'],
-                                    datasets: [
-                                    {
-                                    label: 'My First Dataset',
-                                    data: [65, 59, 80],
-                                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                                    },
-                                    {
-                                    label: "Loss",
-                                    data: [100,200,300],
-                                    backgroundColor: 'rgba(49,0,185,0.5)',
-                                    
-                                    },
+                    <div className={styles.card}>
+                      <div className={styles.stats}>
+                        <Bar
+                          data={{
+                            labels: ['Quiz1', 'Quiz2', 'Quiz3', 'Quiz4'],
+                            datasets: [
+                              {
+                                label: 'Correct Answers',
+                                data: answers.map(answer => parseInt(answer.numCorrect)),
+                                backgroundColor: 'rgba(49,0,185,0.5)',
+                              },
+                            ],
+                          }}
+                        />
+                      </div>
+                    </div>
 
-                                ],
-
-                                }}
-                                />
-                            </div>
-                        </div>
+                    <div className={styles.card}>
+                      <div className={styles.stats}>
+                        <Bar
+                          data={{
+                            labels: ['Quiz1', 'Quiz2', 'Quiz3', 'Quiz4'],
+                            datasets: [
+                              {
+                                label: 'Incorrect Answers',
+                                data: answers.map(answer => parseInt(answer.numIncorrect)),
+                                backgroundColor: 'rgba(255, 105, 180, 0.5)',
+                              },
+                            ],
+                          }}
+                        />
+                      </div>
+                    </div>
                     </div>
 
                     <div className={styles.bigCard}>
