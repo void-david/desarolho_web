@@ -1,5 +1,6 @@
 'use client';
 import { useUser } from "@clerk/nextjs";
+import { useState, useEffect } from 'react';
 
 import React from 'react'
 import styles from '@/styles/home.module.css';
@@ -40,8 +41,36 @@ import {
     },
   };
 
+  type Answer = {
+    id: number;
+    certainty: string;
+    numCorrect: string;
+    numIncorrect: string;
+    score: string;
+  };
+  
+
 export default function Home() {
     const { isLoaded, isSignedIn, user } = useUser();
+    const [answers, setAnswers] = useState<Answer[]>([]);
+    const getAnswers = async () => {
+        const res = await fetch('http://localhost:3001/api/get-answers', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        const data = await res.json();
+        setAnswers(data);
+        console.log(data);
+      };
+  
+      useEffect(() => {
+        // Fetch questions when component mounts
+        getAnswers();
+      }, []);
+  
 
   return (
     <>
@@ -80,13 +109,7 @@ export default function Home() {
                 <div className={styles.cardContainer}>
                     <div className={styles.bigCard}>
                         <div className={styles.feedbackHeader}>
-                            Give your feedback
-                                <select className={styles.feedbackContent}>
-                                    <option value="" disabled selected>Pick a Quiz</option>
-                                    <option value="opcion1">Quiz 1</option>
-                                    <option value="opcion2">Quiz 2</option>
-                                    <option value="opcion3">Quiz 3</option>
-                                </select>
+                            <h2>Give your feedback</h2>
                         </div>
 
                         <div className={styles.feedbackWritingSpace}>
