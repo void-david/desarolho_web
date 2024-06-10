@@ -44,8 +44,7 @@ export default function Navbar() {
           <Link className={styles.navlink} href="/game">Game</Link>
           <Link className={styles.navlink} href="/clases">Classes</Link>
           <Link className={styles.navlink} href="/quizzes">Quizzes</Link>
-          <Link className={styles.navlink} href="/students">Students</Link>
-          <Link className={styles.navlink} href="/statistics">Statistics</Link>
+          <Link className={styles.navlink} href="/students">Users</Link>
           <Link className={styles.navlink} href="/ML">ML</Link>
         </div>
 
