@@ -27,5 +27,19 @@ router.post('/api/crear-clase', (req, res) => {
     });
 });
   
+//delete last clase
+router.delete('/api/delete-last-clase', (req, res) => {
+    const sql = 'DELETE FROM Clases WHERE id = (SELECT MAX(id) FROM Clases)';
+  
+    db.run(sql, [], function(err) {
+      if (err) {
+        return res.status(500).send(err.message);
+      }
+      res.send({ message: 'Class successfully deleted', changes: this.changes });
+    });
+  });
+
+  //delete clase by id
+
 module.exports = router;
 
