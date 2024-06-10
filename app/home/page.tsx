@@ -76,7 +76,7 @@ export default function Home() {
         <div className={styles.background}>
             <div className={styles.mainContainer}>
                 <div className={styles.header}>
-                    <h2>Welcome, {user?.firstName}!</h2>
+                    <h2>Welcome, {user?.firstName} {user?.lastName}!</h2>
                 </div>
 
                 <div className={styles.subHeader}>
