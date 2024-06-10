@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation'
 import { AiOutlineMenu, AiOutlineCloseCircle  } from "react-icons/ai";
 import { useState } from 'react';
+import { useUser } from "@clerk/nextjs";
+
 
 import {
   SignInButton,
@@ -15,8 +17,11 @@ import {
 } from '@clerk/nextjs';
 
 export default function Navbar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
+  const { user } = useUser();
+  const isAdmin = user?.publicMetadata?.isAdmin === true;
   const [isOpen, setIsOpen] = useState(false);
+  
 
   const handleClick = () => {
     setIsOpen(!isOpen); 
@@ -43,8 +48,8 @@ export default function Navbar() {
           <Link className={styles.navlink} href="/home">Home</Link>
           <Link className={styles.navlink} href="/game">Game</Link>
           <Link className={styles.navlink} href="/clases">Classes</Link>
-          <Link className={styles.navlink} href="/quizzes">Quizzes</Link>
-          <Link className={styles.navlink} href="/students">Users</Link>
+          {isAdmin ? <Link className={styles.navlink} href="/quizzes">Quizzes</Link> : null}
+          {isAdmin ? <Link className={styles.navlink} href="/students">Users</Link> : null}
           <Link className={styles.navlink} href="/ML">ML</Link>
         </div>
 

@@ -5,6 +5,7 @@ import { get } from 'http';
 import styles from '@/styles/clases.module.css';
 
 
+
 interface Clase {
   id: number;
   clase: string;
@@ -18,6 +19,7 @@ interface Alumno {
 
 const Clases = () => {
   const { user } = useUser();
+  const isAdmin = user?.publicMetadata?.isAdmin === true;
   const [clases, setClases] = useState<Clase[]>([]);
   const [alumnos, setAlumnos] = useState<Alumno[]>([]);
 
@@ -128,34 +130,38 @@ const Clases = () => {
         </div>
       ))}
 
-      <div className={styles.bigCard}>
-        <h2>Create a new class</h2>
-        <div className={styles.box}>
-          <input  type="text" id="new-class" autoComplete='off'/>
-        </div>
+        {isAdmin ? (
+          <div className={styles.bigCard}>
+            <h2>Create a new class</h2>
+            <div className={styles.box}>
+              <input type="text" id="new-class" autoComplete='off'/>
+            </div>
 
-        <button className={styles.submitButton}
-          onClick={() => {
-            const newClass = document.getElementById('new-class') as HTMLInputElement;
-            if (newClass) {
-              crearClase(newClass.value, user && user.firstName ? user.firstName : 'Unknown');
+            <button className={styles.submitButton}
+              onClick={() => {
+                const newClass = document.getElementById('new-class') as HTMLInputElement;
+                if (newClass) {
+                  crearClase(newClass.value, user && user.firstName ? user.firstName : 'Unknown');
+                  getClases();
+                }
+              }}>
+              Add new class
+            </button>
+          </div>
+        ) : null}
+
+        {isAdmin ? (
+          <div className={styles.bigCard}>
+            <h2>Delete last class</h2>
+            <button className={styles.submitButton}
+              onClick={() => {
+                deleteLastClass();
                 getClases();
-            }
-            }}>
-            Add new class
-        </button>
-      </div>
-
-      <div className={styles.bigCard}>
-        <h2>Delete last class</h2>
-        <button className={styles.submitButton}
-          onClick={() => {
-            deleteLastClass();
-            getClases();
-          }}>
-          Delete last class
-      </button>
-      </div>
+              }}>
+              Delete last class
+            </button>
+          </div>
+        ) : null}
       </div>
 
 

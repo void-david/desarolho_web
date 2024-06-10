@@ -70,7 +70,6 @@ export default function Home() {
         // Fetch questions when component mounts
         getAnswers();
       }, []);
-  
 
   return (
     <>
@@ -81,29 +80,20 @@ export default function Home() {
                 </div>
 
                 <div className={styles.subHeader}>
-                    You have (3) quizzes waiting for completion.
+                    Last (4) Quizzes Scores:
                 </div>
 
                 <div className={styles.cardContainer}>
                     <div className={styles.leftCardContainer}>
-                        <div className={styles.card}>
-                            <h1>78%</h1>
-                            <p>Matematicas</p>
+                    {answers.slice(-4).map((answer, index) => (
+                        <div key={index} className={styles.card}>
+                            <p>Score:</p>
+                            <h1>{answer.certainty}%</h1>
+                            <p>Quiz {index + 1}</p>
                         </div>
-                        <div className={styles.card}>
-                            <h1>89%</h1>
-                            <p>Física</p>
-                        </div>
-                        <div className={styles.card}>
-                            <h1>100%</h1>
-                            <p>Química</p>
-                        </div>
+                        ))}
                     </div>
-                    <div className={styles.rightCardContainer}>
-                        <div className={styles.roundCard}>
-                            <h1>89%</h1>
-                        </div>
-                    </div>
+                    
                 </div>
 
                 <div className={styles.cardContainer}>
@@ -119,7 +109,8 @@ export default function Home() {
                             ></textarea>
                         </div>
 
-                        <button className={styles.submitButton}> Submit </button>
+                        <button className={styles.submitButton} onClick={() => alert('Feedback submitted')}> Submit </button>
+
 
                     </div>
                     <div className={styles.rightCardContainer}>
