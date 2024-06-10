@@ -192,3 +192,14 @@
     text-align: center;
     flex-direction: column;
 }
+
+.result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    flex-direction: column;
+    width: 95%;
+    margin: 1rem;
+    padding: 1rem;
+}
