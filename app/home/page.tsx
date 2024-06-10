@@ -128,13 +128,9 @@ export default function Home() {
 
                     <div className={styles.bigCard}>
                         <h2>Become a Teacher!</h2>
-                        <div className={styles.feedbackWritingSpace}>
-                            <textarea
-                                className={styles.feedbackTextarea}
-                                placeholder="Please enter your teacher key."
-                            ></textarea>
-                        </div>
-                        <button className={styles.submitButton}> Enter </button>
+                        <p>Do you want to become a teacher? We have a program for you!</p>
+                        <p>Please contact us at</p>
+                        <h3>learninglimbo@gmail.com</h3>
                     </div>
 
                 </div>
