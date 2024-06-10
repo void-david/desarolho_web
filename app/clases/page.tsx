@@ -80,6 +80,22 @@ const Clases = () => {
     const data = await res.json();
     setAlumnos(data);
   }
+  //function deleteLastClass() 
+   
+  const deleteLastClass = async () => {
+    const res = await fetch('https://desarolhoweb-production.up.railway.app/api/delete-last-clase', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (res.ok) {
+      const data = await res.json();
+      return data;
+    } else {
+      throw new Error('Error deleting class');
+    }
+  }
 
   useEffect(() => {
     getClases();
@@ -128,6 +144,17 @@ const Clases = () => {
             }}>
             Add new class
         </button>
+      </div>
+
+      <div className={styles.bigCard}>
+        <h2>Delete last class</h2>
+        <button className={styles.submitButton}
+          onClick={() => {
+            deleteLastClass();
+            getClases();
+          }}>
+          Delete last class
+      </button>
       </div>
       </div>
 
