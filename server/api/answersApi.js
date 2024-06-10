@@ -15,6 +15,16 @@ router.post('/api/post-answers', (req, res) => {
     });
 });
 
+router.get('/api/get-answers', (req, res) => {
+    const sql = `SELECT * FROM Answers`;
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            return res.status(500).send(err.message);
+        }
+        res.send(rows);
+    });
+});
+
 
 
 
