@@ -19,7 +19,7 @@ import {
 export default function Navbar() {
   const pathname = usePathname();
   const { user } = useUser();
-  const isAdmin = user?.publicMetadata?.isAdmin === true;
+  const isAdmin = true;
   const [isOpen, setIsOpen] = useState(false);
   
 

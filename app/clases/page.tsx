@@ -19,7 +19,7 @@ interface Alumno {
 
 const Clases = () => {
   const { user } = useUser();
-  const isAdmin = user?.publicMetadata?.isAdmin === true;
+  const isAdmin = true;
   const [clases, setClases] = useState<Clase[]>([]);
   const [alumnos, setAlumnos] = useState<Alumno[]>([]);
 
