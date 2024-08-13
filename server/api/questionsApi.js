@@ -25,6 +25,18 @@ router.get('/api/get-questions/:materia', (req, res) => {
   });
 });
 
+router.get('/api/get-materias', (req, res) => {
+  const sql = 'SELECT DISTINCT materia FROM Questions';
+
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+    res.send(rows);
+  });
+});
+
+
 router.post('/api/post-questions', (req, res) => {
   const { description, answer_1, answer_2, answer_3, answer_4, answer_correct, materia } = req.body;
 
@@ -35,6 +47,55 @@ router.post('/api/post-questions', (req, res) => {
       return res.status(500).send(err.message);
     }
     res.send({ message: 'Question successfully added', lastID: this.lastID });
+  });
+});
+
+router.post('/api/update-questions/:id', (req, res) => {
+  const { id } = req.params;
+  const { description, answer_1, answer_2, answer_3, answer_4, answer_correct, materia } = req.body;
+
+  const sql = `UPDATE Questions SET description = ?, answer_1 = ?, answer_2 = ?, answer_3 = ?, answer_4 = ?, answer_correct = ?, materia = ? WHERE id = ?`;
+
+  db.run(sql, [description, answer_1, answer_2, answer_3, answer_4, answer_correct, materia, id], function(err) {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+    res.send({ message: 'Question successfully updated', updatedID: id });
+  });
+});
+
+router.delete('/api/deleteQuestionById/:id', (req, res) => {
+  const { id } = req.params;
+
+  const sql = `DELETE FROM Questions WHERE id = ?`;
+
+  db.run(sql, id, function(err) {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+    res.send({ message: 'Question successfully deleted', deletedID: id });
+  });
+});
+
+router.delete('/api/deleteLastQuestion', (req, res) => {
+  const sqlFindLast = `SELECT id FROM Questions ORDER BY id DESC LIMIT 1`;
+
+  db.get(sqlFindLast, [], (err, row) => {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+
+    if (row) {
+      const sqlDelete = `DELETE FROM Questions WHERE id = ?`;
+      db.run(sqlDelete, row.id, function(err) {
+        if (err) {
+          return res.status(500).send(err.message);
+        }
+        res.send({ message: 'Last question successfully deleted', deletedID: row.id });
+      });
+    } else {
+      res.status(404).send({ message: 'No question found to delete' });
+    }
   });
 });
 

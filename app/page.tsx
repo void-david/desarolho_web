@@ -10,7 +10,7 @@ import {
 } from '@clerk/nextjs';
 
 
-export default function Home() {
+function Login() {
   
   return (
     <>
@@ -30,7 +30,7 @@ export default function Home() {
       <div className={styles.rightPageContainer}>
 
         <div className={styles.rightMainContainer}>
-          <h1 style={{fontSize: '2rem', color: 'var(--secondary-color)', fontWeight: '700'}}>Let's Begin.</h1>
+          <h1 style={{fontSize: '2rem', color: 'var(--secondary-color)', fontWeight: '700'}}>Lets Begin.</h1>
 
           <div className={styles.buttonContainer}>
 
@@ -42,8 +42,8 @@ export default function Home() {
 
             <SignedIn>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-              <Link style={{ textDecoration: 'none', marginBottom: '10px' }} href={"/quizzes"}>
-                <button className={styles.button}>Go to quizzes</button>
+              <Link style={{ textDecoration: 'none', marginBottom: '10px' }} href={"/home"}>
+                <button className={styles.button}>Go to Home</button>
               </Link>
               <SignOutButton>
                 <button className={styles.button}>Log out</button>
@@ -72,3 +72,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Login;
